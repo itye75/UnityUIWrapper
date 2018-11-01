@@ -7,7 +7,7 @@ enum ScenarioState
 	Init = 0;
 	Stopped = 1;
 	Playing = 2;
-	Pasued = 3;
+	Paused = 3;
 }
 
 message StatusMessage

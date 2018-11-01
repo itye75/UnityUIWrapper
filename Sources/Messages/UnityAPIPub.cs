@@ -33,7 +33,7 @@ namespace UnityAPI.Pub {
             "IAEoCzIaLlVuaXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSDAoETmFtZRgDIAEo",
             "CSIvCgxWZWN0b3JEb3VibGUSCQoBeBgBIAEoARIJCgF5GAIgASgBEgkKAXoY",
             "AyABKAEqPwoNU2NlbmFyaW9TdGF0ZRIICgRJbml0EAASCwoHU3RvcHBlZBAB",
-            "EgsKB1BsYXlpbmcQAhIKCgZQYXN1ZWQQA2IGcHJvdG8z"));
+            "EgsKB1BsYXlpbmcQAhIKCgZQYXVzZWQQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Pub.ScenarioState), }, new pbr::GeneratedClrTypeInfo[] {
@@ -50,7 +50,7 @@ namespace UnityAPI.Pub {
     [pbr::OriginalName("Init")] Init = 0,
     [pbr::OriginalName("Stopped")] Stopped = 1,
     [pbr::OriginalName("Playing")] Playing = 2,
-    [pbr::OriginalName("Pasued")] Pasued = 3,
+    [pbr::OriginalName("Paused")] Paused = 3,
   }
 
   #endregion
