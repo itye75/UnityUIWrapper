@@ -45,17 +45,17 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="2" Grid.Column="0">
-                <view:EntitiesListView></view:EntitiesListView>
-            </Grid>
+            <Border BorderBrush="White" BorderThickness="2" Grid.Row="1" Grid.Column="0">
+                <view:ObjectsPanelView/>
+            </Border>
 
-            <Grid Grid.Row="3" Grid.Column="0">
-                 <view:EntityDetailsView />
-            </Grid>
-            
-            <Grid Grid.Row="1" Grid.Column="0">
-             <view:ObjectsPanelView/>
-            </Grid>
+            <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="0">
+                <view:EntitiesListView></view:EntitiesListView>
+            </Border>
+
+            <Border BorderBrush="White" BorderThickness="2" Grid.Row="3" Grid.Column="0">
+                <view:EntityDetailsView />
+            </Border>
 
 
             <Grid Grid.Column="0" Row="0" ColumnSpan="3"
@@ -77,17 +77,14 @@
                     <ColumnDefinition Width="150"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>-->
-
-      
-         
+                </Grid.ColumnDefinitions>-->         
             </Grid>
 
             <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Width="3" HorizontalAlignment="Stretch"></GridSplitter>
-           
-            <Grid Grid.Column="2" Grid.Row="1" RowSpan="3">
+
+            <Border BorderBrush="White" BorderThickness="2" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3">
                 <view:UnityView/>
-            </Grid>
+            </Border>
         </Grid>
 
     </Grid>
