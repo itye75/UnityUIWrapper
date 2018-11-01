@@ -29,7 +29,7 @@
                 </Button.Content>
             </Button>
             <Label Margin="10,0,0,0" VerticalAlignment="Center" Content="Scene Time: "/>
-            <Label VerticalAlignment="Center" Content="00:00:00"/>
+            <Label VerticalAlignment="Center" Content="{Binding ElapsedTime, StringFormat=HH\\:mm\\:ss}"/>
         </StackPanel>
     </Grid>
 </UserControl>

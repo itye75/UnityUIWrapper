@@ -24,17 +24,20 @@ namespace UnityAPI.Pub {
     static UnityAPIPubReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIj8KEUVudGl0aWVz",
-            "VXBkYXRlTXNnEioKCGVudGl0aWVzGAEgAygLMhguVW5pdHlBUEkuUHViLkVu",
-            "dGl0eURhdGEihQEKCkVudGl0eURhdGESCgoCSWQYBCABKAUSLAoIbG9jYXRp",
-            "b24YASABKAsyGi5Vbml0eUFQSS5QdWIuVmVjdG9yRG91YmxlEi8KC29yaWVu",
-            "dGF0aW9uGAIgASgLMhouVW5pdHlBUEkuUHViLlZlY3RvckRvdWJsZRIMCgRO",
-            "YW1lGAMgASgJIi8KDFZlY3RvckRvdWJsZRIJCgF4GAEgASgBEgkKAXkYAiAB",
-            "KAESCQoBehgDIAEoAWIGcHJvdG8z"));
+            "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIpABCg1TdGF0dXNN",
+            "ZXNzYWdlEioKCGVudGl0aWVzGAEgAygLMhguVW5pdHlBUEkuUHViLkVudGl0",
+            "eURhdGESKgoFc3RhdGUYAiABKA4yGy5Vbml0eUFQSS5QdWIuU2NlbmFyaW9T",
+            "dGF0ZRIRCgl0aW1lc3RhbXAYAyABKAMSFAoMc2NlbmFyaW9QYXRoGAQgASgJ",
+            "IoUBCgpFbnRpdHlEYXRhEgoKAklkGAQgASgFEiwKCGxvY2F0aW9uGAEgASgL",
+            "MhouVW5pdHlBUEkuUHViLlZlY3RvckRvdWJsZRIvCgtvcmllbnRhdGlvbhgC",
+            "IAEoCzIaLlVuaXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSDAoETmFtZRgDIAEo",
+            "CSIvCgxWZWN0b3JEb3VibGUSCQoBeBgBIAEoARIJCgF5GAIgASgBEgkKAXoY",
+            "AyABKAEqPwoNU2NlbmFyaW9TdGF0ZRIICgRJbml0EAASCwoHU3RvcHBlZBAB",
+            "EgsKB1BsYXlpbmcQAhIKCgZQYXN1ZWQQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntitiesUpdateMsg), global::UnityAPI.Pub.EntitiesUpdateMsg.Parser, new[]{ "Entities" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Pub.ScenarioState), }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.StatusMessage), global::UnityAPI.Pub.StatusMessage.Parser, new[]{ "Entities", "State", "Timestamp", "ScenarioPath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntityData), global::UnityAPI.Pub.EntityData.Parser, new[]{ "Id", "Location", "Orientation", "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.VectorDouble), global::UnityAPI.Pub.VectorDouble.Parser, new[]{ "X", "Y", "Z" }, null, null, null)
           }));
@@ -42,12 +45,22 @@ namespace UnityAPI.Pub {
     #endregion
 
   }
+  #region Enums
+  public enum ScenarioState {
+    [pbr::OriginalName("Init")] Init = 0,
+    [pbr::OriginalName("Stopped")] Stopped = 1,
+    [pbr::OriginalName("Playing")] Playing = 2,
+    [pbr::OriginalName("Pasued")] Pasued = 3,
+  }
+
+  #endregion
+
   #region Messages
-  public sealed partial class EntitiesUpdateMsg : pb::IMessage<EntitiesUpdateMsg> {
-    private static readonly pb::MessageParser<EntitiesUpdateMsg> _parser = new pb::MessageParser<EntitiesUpdateMsg>(() => new EntitiesUpdateMsg());
+  public sealed partial class StatusMessage : pb::IMessage<StatusMessage> {
+    private static readonly pb::MessageParser<StatusMessage> _parser = new pb::MessageParser<StatusMessage>(() => new StatusMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<EntitiesUpdateMsg> Parser { get { return _parser; } }
+    public static pb::MessageParser<StatusMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -60,21 +73,24 @@ namespace UnityAPI.Pub {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EntitiesUpdateMsg() {
+    public StatusMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EntitiesUpdateMsg(EntitiesUpdateMsg other) : this() {
+    public StatusMessage(StatusMessage other) : this() {
       entities_ = other.entities_.Clone();
+      state_ = other.state_;
+      timestamp_ = other.timestamp_;
+      scenarioPath_ = other.scenarioPath_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EntitiesUpdateMsg Clone() {
-      return new EntitiesUpdateMsg(this);
+    public StatusMessage Clone() {
+      return new StatusMessage(this);
     }
 
     /// <summary>Field number for the "entities" field.</summary>
@@ -87,13 +103,46 @@ namespace UnityAPI.Pub {
       get { return entities_; }
     }
 
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 2;
+    private global::UnityAPI.Pub.ScenarioState state_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as EntitiesUpdateMsg);
+    public global::UnityAPI.Pub.ScenarioState State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 3;
+    private long timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scenarioPath" field.</summary>
+    public const int ScenarioPathFieldNumber = 4;
+    private string scenarioPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ScenarioPath {
+      get { return scenarioPath_; }
+      set {
+        scenarioPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(EntitiesUpdateMsg other) {
+    public override bool Equals(object other) {
+      return Equals(other as StatusMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(StatusMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -101,6 +150,9 @@ namespace UnityAPI.Pub {
         return true;
       }
       if(!entities_.Equals(other.entities_)) return false;
+      if (State != other.State) return false;
+      if (Timestamp != other.Timestamp) return false;
+      if (ScenarioPath != other.ScenarioPath) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -108,6 +160,9 @@ namespace UnityAPI.Pub {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= entities_.GetHashCode();
+      if (State != 0) hash ^= State.GetHashCode();
+      if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
+      if (ScenarioPath.Length != 0) hash ^= ScenarioPath.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -122,6 +177,18 @@ namespace UnityAPI.Pub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       entities_.WriteTo(output, _repeated_entities_codec);
+      if (State != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) State);
+      }
+      if (Timestamp != 0L) {
+        output.WriteRawTag(24);
+        output.WriteInt64(Timestamp);
+      }
+      if (ScenarioPath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ScenarioPath);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -131,6 +198,15 @@ namespace UnityAPI.Pub {
     public int CalculateSize() {
       int size = 0;
       size += entities_.CalculateSize(_repeated_entities_codec);
+      if (State != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (Timestamp != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Timestamp);
+      }
+      if (ScenarioPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ScenarioPath);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -138,11 +214,20 @@ namespace UnityAPI.Pub {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(EntitiesUpdateMsg other) {
+    public void MergeFrom(StatusMessage other) {
       if (other == null) {
         return;
       }
       entities_.Add(other.entities_);
+      if (other.State != 0) {
+        State = other.State;
+      }
+      if (other.Timestamp != 0L) {
+        Timestamp = other.Timestamp;
+      }
+      if (other.ScenarioPath.Length != 0) {
+        ScenarioPath = other.ScenarioPath;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -156,6 +241,18 @@ namespace UnityAPI.Pub {
             break;
           case 10: {
             entities_.AddEntriesFrom(input, _repeated_entities_codec);
+            break;
+          }
+          case 16: {
+            state_ = (global::UnityAPI.Pub.ScenarioState) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            Timestamp = input.ReadInt64();
+            break;
+          }
+          case 34: {
+            ScenarioPath = input.ReadString();
             break;
           }
         }

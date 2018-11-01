@@ -18,9 +18,9 @@ namespace UnityUIWrapper.BL
         private SubscriberSocket m_receiverSocket;
         private Poller m_poller;
 
-        public delegate void EntitiesUpdateDelegate(EntitiesUpdateMsg p_entities);
+        public delegate void StatusMessageDelegate(StatusMessage p_statusMessage);
 
-        public event EntitiesUpdateDelegate EntitiesUpdateEvent;
+        public event StatusMessageDelegate StatusUpdateEvent;
 
 
         private CommunicationHandler()
@@ -39,10 +39,8 @@ namespace UnityUIWrapper.BL
 
         private void onMessageReceived(object sender, NetMQSocketEventArgs e)
         {
-            var msg = EntitiesUpdateMsg.Parser.ParseFrom(e.Socket.Receive());
-
-            if (EntitiesUpdateEvent != null)
-                EntitiesUpdateEvent.Invoke(msg);
+            var msg = StatusMessage.Parser.ParseFrom(e.Socket.Receive());
+            StatusUpdateEvent?.Invoke(msg);
         }
 
         public void Close()

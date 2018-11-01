@@ -2,10 +2,22 @@ syntax = "proto3";
 
 package UnityAPI.Pub;
 
-message EntitiesUpdateMsg
+enum ScenarioState
+{
+	Init = 0;
+	Stopped = 1;
+	Playing = 2;
+	Pasued = 3;
+}
+
+message StatusMessage
 {
 	repeated EntityData entities = 1;
+	ScenarioState state = 2;
+	int64 timestamp = 3;
+	string scenarioPath = 4;
 }
+
 
 message EntityData
 {
