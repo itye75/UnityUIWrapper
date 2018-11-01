@@ -37,6 +37,7 @@ namespace UnityUIWrapper.ViewModel
             
             SimpleIoc.Default.Register<RemoteControllerViewModel>();
             SimpleIoc.Default.Register<ObjectsPanelViewModel>();
+            SimpleIoc.Default.Register<RouteSelectorViewModel>();
         }
 
         public MainViewModel Main
@@ -61,6 +62,14 @@ namespace UnityUIWrapper.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<EntityDetailsViewModel>();
+            }
+        }
+
+        public RouteSelectorViewModel RouteSelctor
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<RouteSelectorViewModel>();
             }
         }
 

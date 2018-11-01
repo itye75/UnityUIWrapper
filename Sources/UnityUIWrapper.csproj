@@ -130,6 +130,7 @@
     <Compile Include="ViewModel\EntitiesListViewModel.cs" />
     <Compile Include="BL\UnityHwndHost.cs" />
     <Compile Include="ViewModel\EntityDetailsViewModel.cs" />
+    <Compile Include="ViewModel\RouteSelectorViewModel.cs" />
     <Compile Include="View\RouteSelectorView.xaml.cs">
       <DependentUpon>RouteSelectorView.xaml</DependentUpon>
     </Compile>

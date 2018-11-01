@@ -21,18 +21,14 @@ namespace UnityUIWrapper.View
     /// </summary>
     public partial class RouteSelectorView : Window
     {
-        private DataState m_state;
+
 
         public RouteSelectorView()
         {
             InitializeComponent();
 
-            m_state = DataState.Instance;
         }
 
-        public List<EntityData> Routes
-        {
-            get { return m_state.Routes; }
-        }
+   
     }
 }
