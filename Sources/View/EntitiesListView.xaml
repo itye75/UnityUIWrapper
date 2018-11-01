@@ -16,6 +16,9 @@
                         <Button Command="{Binding EntityClickCommand, Mode=OneTime}"
                             BorderThickness="0"
                             Focusable="False">
+                            <Button.InputBindings>
+                                <MouseBinding Gesture="RightClick" Command="{Binding RouteSelectorCommand}" />
+                            </Button.InputBindings>
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="{Binding Name}"></Label>

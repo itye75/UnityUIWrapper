@@ -19,6 +19,7 @@ namespace UnityUIWrapper.BL
         private bool m_highlightObjects = false;
         private CameraView m_cameraView = CameraView.PlanView;
 
+        private List<EntityData> m_routes = new List<EntityData>();
         private List<EntityData> m_entities = new List<EntityData>();
 
         private string m_currentScenePath;
@@ -126,6 +127,8 @@ namespace UnityUIWrapper.BL
             ElapsedTime = p_msg.Timestamp;
             ScenarioPath = p_msg.ScenarioPath;
 
+            m_routes = p_msg.Routes.ToList();
+
             foreach (var ent in p_msg.Entities)
             {
                 var e = m_entities.FirstOrDefault(et => et.Id == ent.Id);
@@ -174,6 +177,11 @@ namespace UnityUIWrapper.BL
         public List<EntityData> Entities
         {
             get { return m_entities; }
+        }
+
+        public List<EntityData> Routes
+        {
+            get { return m_routes; }
         }
     }
 }

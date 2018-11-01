@@ -130,6 +130,9 @@
     <Compile Include="ViewModel\EntitiesListViewModel.cs" />
     <Compile Include="BL\UnityHwndHost.cs" />
     <Compile Include="ViewModel\EntityDetailsViewModel.cs" />
+    <Compile Include="View\RouteSelectorView.xaml.cs">
+      <DependentUpon>RouteSelectorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UnityView.xaml.cs">
       <DependentUpon>UnityView.xaml</DependentUpon>
     </Compile>
@@ -165,6 +168,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\RouteSelectorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UnityView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

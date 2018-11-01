@@ -5,6 +5,7 @@ using GalaSoft.MvvmLight.Messaging;
 using UnityAPI.Pub;
 using UnityUIWrapper.BL;
 using UnityUIWrapper.Common;
+using UnityUIWrapper.View;
 
 namespace UnityUIWrapper.Model
 {
@@ -42,6 +43,21 @@ namespace UnityUIWrapper.Model
             {
                 return new RelayCommand(onEntityClick, () => true);
             }
+        }
+
+        public ICommand RouteSelectorCommand
+        {
+            get
+            {
+                return new RelayCommand(onRouteSelector, () => true);
+            }
+        }
+
+        private void onRouteSelector()
+        {
+            RouteSelectorView view = new RouteSelectorView();
+            view.Show();
+            
         }
 
         private void onEntityClick()

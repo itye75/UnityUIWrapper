@@ -45,17 +45,17 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Border BorderBrush="White" BorderThickness="2" Grid.Row="1" Grid.Column="0">
+            <Grid Grid.Row="1" Grid.Column="0">
                 <view:ObjectsPanelView/>
-            </Border>
+            </Grid>
 
-            <Border BorderBrush="White" BorderThickness="2" Grid.Row="2" Grid.Column="0">
+            <Grid  Grid.Row="2" Grid.Column="0">
                 <view:EntitiesListView></view:EntitiesListView>
-            </Border>
+            </Grid>
 
-            <Border BorderBrush="White" BorderThickness="2" Grid.Row="3" Grid.Column="0">
+            <Grid  Grid.Row="3" Grid.Column="0">
                 <view:EntityDetailsView />
-            </Border>
+            </Grid>
 
 
             <Grid Grid.Column="0" Row="0" ColumnSpan="3"
@@ -82,9 +82,9 @@
 
             <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Width="3" HorizontalAlignment="Stretch"></GridSplitter>
 
-            <Border BorderBrush="White" BorderThickness="2" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3">
+            <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="3">
                 <view:UnityView/>
-            </Border>
+            </Grid>
         </Grid>
 
     </Grid>
