@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
 using UnityAPI.Pub;
 using UnityUIWrapper.BL;
+using UnityUIWrapper.Common;
 
 namespace UnityUIWrapper.Model
 {
@@ -45,6 +47,8 @@ namespace UnityUIWrapper.Model
         private void onEntityClick()
         {
             m_api.SelectEntity(this.Entity.Id);
+
+            Messenger.Default.Send<EntitySelectedMessage>(new EntitySelectedMessage() { Entity = this.Entity });
         }
 
         private void onCreateEntity()

@@ -42,12 +42,17 @@
                 <RowDefinition Height="60"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="2" Grid.Column="0">
                 <view:EntitiesListView></view:EntitiesListView>
             </Grid>
 
+            <Grid Grid.Row="3" Grid.Column="0">
+                 <view:EntityDetailsView />
+            </Grid>
+            
             <Grid Grid.Row="1" Grid.Column="0">
              <view:ObjectsPanelView/>
             </Grid>
@@ -78,9 +83,9 @@
          
             </Grid>
 
-            <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Width="3" HorizontalAlignment="Stretch"></GridSplitter>
+            <GridSplitter Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Width="3" HorizontalAlignment="Stretch"></GridSplitter>
            
-            <Grid Grid.Column="2" Grid.Row="1" RowSpan="2">
+            <Grid Grid.Column="2" Grid.Row="1" RowSpan="3">
                 <view:UnityView/>
             </Grid>
         </Grid>
