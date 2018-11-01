@@ -21,6 +21,11 @@ namespace UnityUIWrapper.BL
 
         private List<EntityData> m_entities = new List<EntityData>();
 
+        private string m_currentScenePath;
+
+        private ScenarioState m_state = ScenarioState.Init;
+        private long m_elapsedTime = 0;
+
         public List<EntityObject> ObjectTypeList { get; set; }
 
         public bool HighlightEntities
@@ -68,7 +73,7 @@ namespace UnityUIWrapper.BL
             m_api = APIImplementation.Instance;
             m_commHandler = CommunicationHandler.Instance;
 
-            m_commHandler.EntitiesUpdateEvent += updateEntities;
+            m_commHandler.StatusUpdateEvent += updateEntities;
 
             ObjectTypeList = new List<EntityObject>();
 
@@ -87,8 +92,22 @@ namespace UnityUIWrapper.BL
             });
         }
 
-        private void updateEntities(EntitiesUpdateMsg p_msg)
+        public long ElapsedTime
         {
+            get { return m_elapsedTime; }
+            set
+            {
+                if (m_elapsedTime == value)
+                    return;
+
+                m_elapsedTime = value;
+                m_propertyUpdatedEvent.OnNext(new Unit());
+            }
+        }
+
+        private void updateEntities(StatusMessage p_msg)
+        {
+
             foreach (var ent in p_msg.Entities)
             {
                 var e = m_entities.FirstOrDefault(et => et.Id == ent.Id);

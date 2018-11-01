@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reactive;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -19,6 +21,8 @@ namespace UnityUIWrapper.ViewModel
         {
             m_state = DataState.Instance;
             m_api = APIImplementation.Instance;
+            m_state.PropertyUpdatedEvent.ObserveOnDispatcher().Subscribe(onPropertyUpdate);
+
         }
 
         public ICommand PlayCommand
@@ -45,6 +49,11 @@ namespace UnityUIWrapper.ViewModel
             }
         }
 
+        public TimeSpan ElapsedTime
+        {
+            get { return TimeSpan.FromSeconds(m_state.ElapsedTime); }
+        }
+
 
         private void onPlay()
         {
@@ -59,6 +68,11 @@ namespace UnityUIWrapper.ViewModel
         private void onPause()
         {
             m_api.Pause();
+        }
+
+        private void onPropertyUpdate(Unit p_unit)
+        {
+            RaisePropertyChanged(() => ElapsedTime);
         }
     }
 }
