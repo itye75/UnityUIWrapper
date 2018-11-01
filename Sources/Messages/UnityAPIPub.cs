@@ -24,20 +24,21 @@ namespace UnityAPI.Pub {
     static UnityAPIPubReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIpABCg1TdGF0dXNN",
+            "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIroBCg1TdGF0dXNN",
             "ZXNzYWdlEioKCGVudGl0aWVzGAEgAygLMhguVW5pdHlBUEkuUHViLkVudGl0",
-            "eURhdGESKgoFc3RhdGUYAiABKA4yGy5Vbml0eUFQSS5QdWIuU2NlbmFyaW9T",
-            "dGF0ZRIRCgl0aW1lc3RhbXAYAyABKAMSFAoMc2NlbmFyaW9QYXRoGAQgASgJ",
-            "IoUBCgpFbnRpdHlEYXRhEgoKAklkGAQgASgFEiwKCGxvY2F0aW9uGAEgASgL",
-            "MhouVW5pdHlBUEkuUHViLlZlY3RvckRvdWJsZRIvCgtvcmllbnRhdGlvbhgC",
-            "IAEoCzIaLlVuaXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSDAoETmFtZRgDIAEo",
-            "CSIvCgxWZWN0b3JEb3VibGUSCQoBeBgBIAEoARIJCgF5GAIgASgBEgkKAXoY",
-            "AyABKAEqPwoNU2NlbmFyaW9TdGF0ZRIICgRJbml0EAASCwoHU3RvcHBlZBAB",
-            "EgsKB1BsYXlpbmcQAhIKCgZQYXVzZWQQA2IGcHJvdG8z"));
+            "eURhdGESKAoGcm91dGVzGAIgAygLMhguVW5pdHlBUEkuUHViLkVudGl0eURh",
+            "dGESKgoFc3RhdGUYAyABKA4yGy5Vbml0eUFQSS5QdWIuU2NlbmFyaW9TdGF0",
+            "ZRIRCgl0aW1lc3RhbXAYBCABKAMSFAoMc2NlbmFyaW9QYXRoGAUgASgJIoUB",
+            "CgpFbnRpdHlEYXRhEgoKAklkGAQgASgFEiwKCGxvY2F0aW9uGAEgASgLMhou",
+            "VW5pdHlBUEkuUHViLlZlY3RvckRvdWJsZRIvCgtvcmllbnRhdGlvbhgCIAEo",
+            "CzIaLlVuaXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSDAoETmFtZRgDIAEoCSIv",
+            "CgxWZWN0b3JEb3VibGUSCQoBeBgBIAEoARIJCgF5GAIgASgBEgkKAXoYAyAB",
+            "KAEqPwoNU2NlbmFyaW9TdGF0ZRIICgRJbml0EAASCwoHU3RvcHBlZBABEgsK",
+            "B1BsYXlpbmcQAhIKCgZQYXVzZWQQA2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Pub.ScenarioState), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.StatusMessage), global::UnityAPI.Pub.StatusMessage.Parser, new[]{ "Entities", "State", "Timestamp", "ScenarioPath" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.StatusMessage), global::UnityAPI.Pub.StatusMessage.Parser, new[]{ "Entities", "Routes", "State", "Timestamp", "ScenarioPath" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntityData), global::UnityAPI.Pub.EntityData.Parser, new[]{ "Id", "Location", "Orientation", "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.VectorDouble), global::UnityAPI.Pub.VectorDouble.Parser, new[]{ "X", "Y", "Z" }, null, null, null)
           }));
@@ -82,6 +83,7 @@ namespace UnityAPI.Pub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public StatusMessage(StatusMessage other) : this() {
       entities_ = other.entities_.Clone();
+      routes_ = other.routes_.Clone();
       state_ = other.state_;
       timestamp_ = other.timestamp_;
       scenarioPath_ = other.scenarioPath_;
@@ -103,8 +105,18 @@ namespace UnityAPI.Pub {
       get { return entities_; }
     }
 
+    /// <summary>Field number for the "routes" field.</summary>
+    public const int RoutesFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::UnityAPI.Pub.EntityData> _repeated_routes_codec
+        = pb::FieldCodec.ForMessage(18, global::UnityAPI.Pub.EntityData.Parser);
+    private readonly pbc::RepeatedField<global::UnityAPI.Pub.EntityData> routes_ = new pbc::RepeatedField<global::UnityAPI.Pub.EntityData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::UnityAPI.Pub.EntityData> Routes {
+      get { return routes_; }
+    }
+
     /// <summary>Field number for the "state" field.</summary>
-    public const int StateFieldNumber = 2;
+    public const int StateFieldNumber = 3;
     private global::UnityAPI.Pub.ScenarioState state_ = 0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::UnityAPI.Pub.ScenarioState State {
@@ -115,7 +127,7 @@ namespace UnityAPI.Pub {
     }
 
     /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 3;
+    public const int TimestampFieldNumber = 4;
     private long timestamp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long Timestamp {
@@ -126,7 +138,7 @@ namespace UnityAPI.Pub {
     }
 
     /// <summary>Field number for the "scenarioPath" field.</summary>
-    public const int ScenarioPathFieldNumber = 4;
+    public const int ScenarioPathFieldNumber = 5;
     private string scenarioPath_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ScenarioPath {
@@ -150,6 +162,7 @@ namespace UnityAPI.Pub {
         return true;
       }
       if(!entities_.Equals(other.entities_)) return false;
+      if(!routes_.Equals(other.routes_)) return false;
       if (State != other.State) return false;
       if (Timestamp != other.Timestamp) return false;
       if (ScenarioPath != other.ScenarioPath) return false;
@@ -160,6 +173,7 @@ namespace UnityAPI.Pub {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= entities_.GetHashCode();
+      hash ^= routes_.GetHashCode();
       if (State != 0) hash ^= State.GetHashCode();
       if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
       if (ScenarioPath.Length != 0) hash ^= ScenarioPath.GetHashCode();
@@ -177,16 +191,17 @@ namespace UnityAPI.Pub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       entities_.WriteTo(output, _repeated_entities_codec);
+      routes_.WriteTo(output, _repeated_routes_codec);
       if (State != 0) {
-        output.WriteRawTag(16);
+        output.WriteRawTag(24);
         output.WriteEnum((int) State);
       }
       if (Timestamp != 0L) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteInt64(Timestamp);
       }
       if (ScenarioPath.Length != 0) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(42);
         output.WriteString(ScenarioPath);
       }
       if (_unknownFields != null) {
@@ -198,6 +213,7 @@ namespace UnityAPI.Pub {
     public int CalculateSize() {
       int size = 0;
       size += entities_.CalculateSize(_repeated_entities_codec);
+      size += routes_.CalculateSize(_repeated_routes_codec);
       if (State != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
       }
@@ -219,6 +235,7 @@ namespace UnityAPI.Pub {
         return;
       }
       entities_.Add(other.entities_);
+      routes_.Add(other.routes_);
       if (other.State != 0) {
         State = other.State;
       }
@@ -243,15 +260,19 @@ namespace UnityAPI.Pub {
             entities_.AddEntriesFrom(input, _repeated_entities_codec);
             break;
           }
-          case 16: {
-            state_ = (global::UnityAPI.Pub.ScenarioState) input.ReadEnum();
+          case 18: {
+            routes_.AddEntriesFrom(input, _repeated_routes_codec);
             break;
           }
           case 24: {
+            state_ = (global::UnityAPI.Pub.ScenarioState) input.ReadEnum();
+            break;
+          }
+          case 32: {
             Timestamp = input.ReadInt64();
             break;
           }
-          case 34: {
+          case 42: {
             ScenarioPath = input.ReadString();
             break;
           }

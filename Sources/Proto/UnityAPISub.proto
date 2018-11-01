@@ -18,7 +18,6 @@ message UnityGlobalCommand
 	CameraView camera_view = 3;
 	TacticalObjectManagement tactical_object_management = 4;
 	RemoteControlMessage remoteControl = 5;
-	
 }
 
 enum SceneManagerCommand
@@ -48,6 +47,7 @@ message ObjectManagement
 	int32 Id = 2;
 	int32 object_type = 3;
 	bool highlight = 4;	
+	int32 routeId = 5;
 }
 
 message TacticalObjectManagement
@@ -61,6 +61,7 @@ enum ObjectControlOpCode
 	HIGHLIGHT_OBJECTS = 1;
 	Remove = 2;
 	Select = 3;
+	AttachRoute = 5;
 }
 
 enum TacticalObjectOpCode

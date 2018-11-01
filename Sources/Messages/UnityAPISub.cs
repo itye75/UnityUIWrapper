@@ -33,25 +33,26 @@ namespace UnityAPI.Sub {
             "amVjdE1hbmFnZW1lbnQSOQoNcmVtb3RlQ29udHJvbBgFIAEoCzIiLlVuaXR5",
             "QVBJLlN1Yi5SZW1vdGVDb250cm9sTWVzc2FnZSJXChRSZW1vdGVDb250cm9s",
             "TWVzc2FnZRIxCgZvcENvZGUYASABKA4yIS5Vbml0eUFQSS5TdWIuU2NlbmVN",
-            "YW5hZ2VyQ29tbWFuZBIMCgRwYXRoGAIgASgJInoKEE9iamVjdE1hbmFnZW1l",
-            "bnQSMgoHb3BfY29kZRgBIAEoDjIhLlVuaXR5QVBJLlN1Yi5PYmplY3RDb250",
-            "cm9sT3BDb2RlEgoKAklkGAIgASgFEhMKC29iamVjdF90eXBlGAMgASgFEhEK",
-            "CWhpZ2hsaWdodBgEIAEoCCJPChhUYWN0aWNhbE9iamVjdE1hbmFnZW1lbnQS",
-            "MwoHb3BfY29kZRgBIAEoDjIiLlVuaXR5QVBJLlN1Yi5UYWN0aWNhbE9iamVj",
-            "dE9wQ29kZSpjCg1Db21tYW5kT3BDb2RlEhUKEU9CSkVDVF9NQU5BR0VNRU5U",
-            "EAASEgoOQ0FNRVJBX0NPTlRST0wQARITCg9UQUNUSUNBTF9PQkpFQ1QQAhIS",
-            "Cg5SRU1PVEVfQ09OVFJPTBADKkgKE1NjZW5lTWFuYWdlckNvbW1hbmQSCAoE",
-            "U0FWRRAAEggKBExPQUQQARIICgRQTEFZEAISCAoEU1RPUBADEgkKBVBBVVNF",
-            "EAQqKgoKQ2FtZXJhVmlldxINCglQTEFOX1ZJRVcQABINCglGUkVFX0xPT0sQ",
-            "ASpNChNPYmplY3RDb250cm9sT3BDb2RlEgcKA0FERBAAEhUKEUhJR0hMSUdI",
-            "VF9PQkpFQ1RTEAESCgoGUmVtb3ZlEAISCgoGU2VsZWN0EAMqKAoUVGFjdGlj",
-            "YWxPYmplY3RPcENvZGUSEAoMQ1JFQVRFX1JPVVRFEABiBnByb3RvMw=="));
+            "YW5hZ2VyQ29tbWFuZBIMCgRwYXRoGAIgASgJIosBChBPYmplY3RNYW5hZ2Vt",
+            "ZW50EjIKB29wX2NvZGUYASABKA4yIS5Vbml0eUFQSS5TdWIuT2JqZWN0Q29u",
+            "dHJvbE9wQ29kZRIKCgJJZBgCIAEoBRITCgtvYmplY3RfdHlwZRgDIAEoBRIR",
+            "CgloaWdobGlnaHQYBCABKAgSDwoHcm91dGVJZBgFIAEoBSJPChhUYWN0aWNh",
+            "bE9iamVjdE1hbmFnZW1lbnQSMwoHb3BfY29kZRgBIAEoDjIiLlVuaXR5QVBJ",
+            "LlN1Yi5UYWN0aWNhbE9iamVjdE9wQ29kZSpjCg1Db21tYW5kT3BDb2RlEhUK",
+            "EU9CSkVDVF9NQU5BR0VNRU5UEAASEgoOQ0FNRVJBX0NPTlRST0wQARITCg9U",
+            "QUNUSUNBTF9PQkpFQ1QQAhISCg5SRU1PVEVfQ09OVFJPTBADKkgKE1NjZW5l",
+            "TWFuYWdlckNvbW1hbmQSCAoEU0FWRRAAEggKBExPQUQQARIICgRQTEFZEAIS",
+            "CAoEU1RPUBADEgkKBVBBVVNFEAQqKgoKQ2FtZXJhVmlldxINCglQTEFOX1ZJ",
+            "RVcQABINCglGUkVFX0xPT0sQASpeChNPYmplY3RDb250cm9sT3BDb2RlEgcK",
+            "A0FERBAAEhUKEUhJR0hMSUdIVF9PQkpFQ1RTEAESCgoGUmVtb3ZlEAISCgoG",
+            "U2VsZWN0EAMSDwoLQXR0YWNoUm91dGUQBSooChRUYWN0aWNhbE9iamVjdE9w",
+            "Q29kZRIQCgxDUkVBVEVfUk9VVEUQAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Sub.CommandOpCode), typeof(global::UnityAPI.Sub.SceneManagerCommand), typeof(global::UnityAPI.Sub.CameraView), typeof(global::UnityAPI.Sub.ObjectControlOpCode), typeof(global::UnityAPI.Sub.TacticalObjectOpCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.UnityGlobalCommand), global::UnityAPI.Sub.UnityGlobalCommand.Parser, new[]{ "OpCode", "ObjectManagement", "CameraView", "TacticalObjectManagement", "RemoteControl" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.RemoteControlMessage), global::UnityAPI.Sub.RemoteControlMessage.Parser, new[]{ "OpCode", "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.ObjectManagement), global::UnityAPI.Sub.ObjectManagement.Parser, new[]{ "OpCode", "Id", "ObjectType", "Highlight" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.ObjectManagement), global::UnityAPI.Sub.ObjectManagement.Parser, new[]{ "OpCode", "Id", "ObjectType", "Highlight", "RouteId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.TacticalObjectManagement), global::UnityAPI.Sub.TacticalObjectManagement.Parser, new[]{ "OpCode" }, null, null, null)
           }));
     }
@@ -84,6 +85,7 @@ namespace UnityAPI.Sub {
     [pbr::OriginalName("HIGHLIGHT_OBJECTS")] HighlightObjects = 1,
     [pbr::OriginalName("Remove")] Remove = 2,
     [pbr::OriginalName("Select")] Select = 3,
+    [pbr::OriginalName("AttachRoute")] AttachRoute = 5,
   }
 
   public enum TacticalObjectOpCode {
@@ -538,6 +540,7 @@ namespace UnityAPI.Sub {
       id_ = other.id_;
       objectType_ = other.objectType_;
       highlight_ = other.highlight_;
+      routeId_ = other.routeId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -590,6 +593,17 @@ namespace UnityAPI.Sub {
       }
     }
 
+    /// <summary>Field number for the "routeId" field.</summary>
+    public const int RouteIdFieldNumber = 5;
+    private int routeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RouteId {
+      get { return routeId_; }
+      set {
+        routeId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ObjectManagement);
@@ -607,6 +621,7 @@ namespace UnityAPI.Sub {
       if (Id != other.Id) return false;
       if (ObjectType != other.ObjectType) return false;
       if (Highlight != other.Highlight) return false;
+      if (RouteId != other.RouteId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -617,6 +632,7 @@ namespace UnityAPI.Sub {
       if (Id != 0) hash ^= Id.GetHashCode();
       if (ObjectType != 0) hash ^= ObjectType.GetHashCode();
       if (Highlight != false) hash ^= Highlight.GetHashCode();
+      if (RouteId != 0) hash ^= RouteId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -646,6 +662,10 @@ namespace UnityAPI.Sub {
         output.WriteRawTag(32);
         output.WriteBool(Highlight);
       }
+      if (RouteId != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(RouteId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -665,6 +685,9 @@ namespace UnityAPI.Sub {
       }
       if (Highlight != false) {
         size += 1 + 1;
+      }
+      if (RouteId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RouteId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -688,6 +711,9 @@ namespace UnityAPI.Sub {
       }
       if (other.Highlight != false) {
         Highlight = other.Highlight;
+      }
+      if (other.RouteId != 0) {
+        RouteId = other.RouteId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -714,6 +740,10 @@ namespace UnityAPI.Sub {
           }
           case 32: {
             Highlight = input.ReadBool();
+            break;
+          }
+          case 40: {
+            RouteId = input.ReadInt32();
             break;
           }
         }

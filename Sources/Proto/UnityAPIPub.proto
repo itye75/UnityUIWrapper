@@ -13,9 +13,10 @@ enum ScenarioState
 message StatusMessage
 {
 	repeated EntityData entities = 1;
-	ScenarioState state = 2;
-	int64 timestamp = 3;
-	string scenarioPath = 4;
+	repeated EntityData routes = 2;
+	ScenarioState state = 3;
+	int64 timestamp = 4;
+	string scenarioPath = 5;
 }
 
 
