@@ -89,7 +89,35 @@ namespace UnityUIWrapper.BL
 
         private void updateEntities(EntitiesUpdateMsg p_msg)
         {
-            m_entities = p_msg.Entities.ToList();
+            foreach (var ent in p_msg.Entities)
+            {
+                var e = m_entities.FirstOrDefault(et => et.Id == ent.Id);
+
+                if (e == null)
+                {
+                    m_entities.Add(ent);
+                }
+
+                else
+                {
+                    e.Location = ent.Location;
+                    e.Orientation = ent.Orientation;
+                    e.Name = ent.Name;
+                }
+            }
+
+            List<int> toDelete = new List<int>();
+
+            foreach (var ent in m_entities)
+            {
+                var e = p_msg.Entities.FirstOrDefault(et => et.Id == ent.Id);
+
+                if (e == null)
+                    toDelete.Add(ent.Id);
+            }
+
+            m_entities.RemoveAll(et => toDelete.Contains(et.Id));
+
             m_entitiesUpdatedEvent.OnNext(new Unit());
         }
 
