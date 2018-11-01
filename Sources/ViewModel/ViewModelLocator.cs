@@ -33,6 +33,8 @@ namespace UnityUIWrapper.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<EntitiesListViewModel>();
+            SimpleIoc.Default.Register<EntityDetailsViewModel>();
+            
             SimpleIoc.Default.Register<RemoteControllerViewModel>();
             SimpleIoc.Default.Register<ObjectsPanelViewModel>();
         }
@@ -51,6 +53,14 @@ namespace UnityUIWrapper.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<EntitiesListViewModel>();
+            }
+        }
+
+        public EntityDetailsViewModel EntityDetailsViewModel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<EntityDetailsViewModel>();
             }
         }
 
