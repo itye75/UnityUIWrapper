@@ -33,25 +33,25 @@ namespace UnityAPI.Sub {
             "amVjdE1hbmFnZW1lbnQSOQoNcmVtb3RlQ29udHJvbBgFIAEoCzIiLlVuaXR5",
             "QVBJLlN1Yi5SZW1vdGVDb250cm9sTWVzc2FnZSJXChRSZW1vdGVDb250cm9s",
             "TWVzc2FnZRIxCgZvcENvZGUYASABKA4yIS5Vbml0eUFQSS5TdWIuU2NlbmVN",
-            "YW5hZ2VyQ29tbWFuZBIMCgRwYXRoGAIgASgJIm4KEE9iamVjdE1hbmFnZW1l",
+            "YW5hZ2VyQ29tbWFuZBIMCgRwYXRoGAIgASgJInoKEE9iamVjdE1hbmFnZW1l",
             "bnQSMgoHb3BfY29kZRgBIAEoDjIhLlVuaXR5QVBJLlN1Yi5PYmplY3RDb250",
-            "cm9sT3BDb2RlEhMKC29iamVjdF90eXBlGAIgASgFEhEKCWhpZ2hsaWdodBgD",
-            "IAEoCCJPChhUYWN0aWNhbE9iamVjdE1hbmFnZW1lbnQSMwoHb3BfY29kZRgB",
-            "IAEoDjIiLlVuaXR5QVBJLlN1Yi5UYWN0aWNhbE9iamVjdE9wQ29kZSpjCg1D",
-            "b21tYW5kT3BDb2RlEhUKEU9CSkVDVF9NQU5BR0VNRU5UEAASEgoOQ0FNRVJB",
-            "X0NPTlRST0wQARITCg9UQUNUSUNBTF9PQkpFQ1QQAhISCg5SRU1PVEVfQ09O",
-            "VFJPTBADKkgKE1NjZW5lTWFuYWdlckNvbW1hbmQSCAoEU0FWRRAAEggKBExP",
-            "QUQQARIICgRQTEFZEAISCAoEU1RPUBADEgkKBVBBVVNFEAQqKgoKQ2FtZXJh",
-            "VmlldxINCglQTEFOX1ZJRVcQABINCglGUkVFX0xPT0sQASo1ChNPYmplY3RD",
-            "b250cm9sT3BDb2RlEgcKA0FERBAAEhUKEUhJR0hMSUdIVF9PQkpFQ1RTEAEq",
-            "KAoUVGFjdGljYWxPYmplY3RPcENvZGUSEAoMQ1JFQVRFX1JPVVRFEABiBnBy",
-            "b3RvMw=="));
+            "cm9sT3BDb2RlEgoKAklkGAIgASgFEhMKC29iamVjdF90eXBlGAMgASgFEhEK",
+            "CWhpZ2hsaWdodBgEIAEoCCJPChhUYWN0aWNhbE9iamVjdE1hbmFnZW1lbnQS",
+            "MwoHb3BfY29kZRgBIAEoDjIiLlVuaXR5QVBJLlN1Yi5UYWN0aWNhbE9iamVj",
+            "dE9wQ29kZSpjCg1Db21tYW5kT3BDb2RlEhUKEU9CSkVDVF9NQU5BR0VNRU5U",
+            "EAASEgoOQ0FNRVJBX0NPTlRST0wQARITCg9UQUNUSUNBTF9PQkpFQ1QQAhIS",
+            "Cg5SRU1PVEVfQ09OVFJPTBADKkgKE1NjZW5lTWFuYWdlckNvbW1hbmQSCAoE",
+            "U0FWRRAAEggKBExPQUQQARIICgRQTEFZEAISCAoEU1RPUBADEgkKBVBBVVNF",
+            "EAQqKgoKQ2FtZXJhVmlldxINCglQTEFOX1ZJRVcQABINCglGUkVFX0xPT0sQ",
+            "ASpNChNPYmplY3RDb250cm9sT3BDb2RlEgcKA0FERBAAEhUKEUhJR0hMSUdI",
+            "VF9PQkpFQ1RTEAESCgoGUmVtb3ZlEAISCgoGU2VsZWN0EAMqKAoUVGFjdGlj",
+            "YWxPYmplY3RPcENvZGUSEAoMQ1JFQVRFX1JPVVRFEABiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Sub.CommandOpCode), typeof(global::UnityAPI.Sub.SceneManagerCommand), typeof(global::UnityAPI.Sub.CameraView), typeof(global::UnityAPI.Sub.ObjectControlOpCode), typeof(global::UnityAPI.Sub.TacticalObjectOpCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.UnityGlobalCommand), global::UnityAPI.Sub.UnityGlobalCommand.Parser, new[]{ "OpCode", "ObjectManagement", "CameraView", "TacticalObjectManagement", "RemoteControl" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.RemoteControlMessage), global::UnityAPI.Sub.RemoteControlMessage.Parser, new[]{ "OpCode", "Path" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.ObjectManagement), global::UnityAPI.Sub.ObjectManagement.Parser, new[]{ "OpCode", "ObjectType", "Highlight" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.ObjectManagement), global::UnityAPI.Sub.ObjectManagement.Parser, new[]{ "OpCode", "Id", "ObjectType", "Highlight" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.TacticalObjectManagement), global::UnityAPI.Sub.TacticalObjectManagement.Parser, new[]{ "OpCode" }, null, null, null)
           }));
     }
@@ -82,6 +82,8 @@ namespace UnityAPI.Sub {
   public enum ObjectControlOpCode {
     [pbr::OriginalName("ADD")] Add = 0,
     [pbr::OriginalName("HIGHLIGHT_OBJECTS")] HighlightObjects = 1,
+    [pbr::OriginalName("Remove")] Remove = 2,
+    [pbr::OriginalName("Select")] Select = 3,
   }
 
   public enum TacticalObjectOpCode {
@@ -533,6 +535,7 @@ namespace UnityAPI.Sub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ObjectManagement(ObjectManagement other) : this() {
       opCode_ = other.opCode_;
+      id_ = other.id_;
       objectType_ = other.objectType_;
       highlight_ = other.highlight_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -554,8 +557,19 @@ namespace UnityAPI.Sub {
       }
     }
 
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 2;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
     /// <summary>Field number for the "object_type" field.</summary>
-    public const int ObjectTypeFieldNumber = 2;
+    public const int ObjectTypeFieldNumber = 3;
     private int objectType_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int ObjectType {
@@ -566,7 +580,7 @@ namespace UnityAPI.Sub {
     }
 
     /// <summary>Field number for the "highlight" field.</summary>
-    public const int HighlightFieldNumber = 3;
+    public const int HighlightFieldNumber = 4;
     private bool highlight_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Highlight {
@@ -590,6 +604,7 @@ namespace UnityAPI.Sub {
         return true;
       }
       if (OpCode != other.OpCode) return false;
+      if (Id != other.Id) return false;
       if (ObjectType != other.ObjectType) return false;
       if (Highlight != other.Highlight) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -599,6 +614,7 @@ namespace UnityAPI.Sub {
     public override int GetHashCode() {
       int hash = 1;
       if (OpCode != 0) hash ^= OpCode.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (ObjectType != 0) hash ^= ObjectType.GetHashCode();
       if (Highlight != false) hash ^= Highlight.GetHashCode();
       if (_unknownFields != null) {
@@ -618,12 +634,16 @@ namespace UnityAPI.Sub {
         output.WriteRawTag(8);
         output.WriteEnum((int) OpCode);
       }
-      if (ObjectType != 0) {
+      if (Id != 0) {
         output.WriteRawTag(16);
+        output.WriteInt32(Id);
+      }
+      if (ObjectType != 0) {
+        output.WriteRawTag(24);
         output.WriteInt32(ObjectType);
       }
       if (Highlight != false) {
-        output.WriteRawTag(24);
+        output.WriteRawTag(32);
         output.WriteBool(Highlight);
       }
       if (_unknownFields != null) {
@@ -636,6 +656,9 @@ namespace UnityAPI.Sub {
       int size = 0;
       if (OpCode != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpCode);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
       }
       if (ObjectType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(ObjectType);
@@ -656,6 +679,9 @@ namespace UnityAPI.Sub {
       }
       if (other.OpCode != 0) {
         OpCode = other.OpCode;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
       }
       if (other.ObjectType != 0) {
         ObjectType = other.ObjectType;
@@ -679,10 +705,14 @@ namespace UnityAPI.Sub {
             break;
           }
           case 16: {
-            ObjectType = input.ReadInt32();
+            Id = input.ReadInt32();
             break;
           }
           case 24: {
+            ObjectType = input.ReadInt32();
+            break;
+          }
+          case 32: {
             Highlight = input.ReadBool();
             break;
           }

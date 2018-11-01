@@ -26,16 +26,16 @@ namespace UnityAPI.Pub {
           string.Concat(
             "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIj8KEUVudGl0aWVz",
             "VXBkYXRlTXNnEioKCGVudGl0aWVzGAEgAygLMhguVW5pdHlBUEkuUHViLkVu",
-            "dGl0eURhdGEieQoKRW50aXR5RGF0YRIsCghsb2NhdGlvbhgBIAEoCzIaLlVu",
-            "aXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSLwoLb3JpZW50YXRpb24YAiABKAsy",
-            "Gi5Vbml0eUFQSS5QdWIuVmVjdG9yRG91YmxlEgwKBE5hbWUYAyABKAkiLwoM",
-            "VmVjdG9yRG91YmxlEgkKAXgYASABKAESCQoBeRgCIAEoARIJCgF6GAMgASgB",
-            "YgZwcm90bzM="));
+            "dGl0eURhdGEihQEKCkVudGl0eURhdGESCgoCSWQYBCABKAUSLAoIbG9jYXRp",
+            "b24YASABKAsyGi5Vbml0eUFQSS5QdWIuVmVjdG9yRG91YmxlEi8KC29yaWVu",
+            "dGF0aW9uGAIgASgLMhouVW5pdHlBUEkuUHViLlZlY3RvckRvdWJsZRIMCgRO",
+            "YW1lGAMgASgJIi8KDFZlY3RvckRvdWJsZRIJCgF4GAEgASgBEgkKAXkYAiAB",
+            "KAESCQoBehgDIAEoAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntitiesUpdateMsg), global::UnityAPI.Pub.EntitiesUpdateMsg.Parser, new[]{ "Entities" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntityData), global::UnityAPI.Pub.EntityData.Parser, new[]{ "Location", "Orientation", "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntityData), global::UnityAPI.Pub.EntityData.Parser, new[]{ "Id", "Location", "Orientation", "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.VectorDouble), global::UnityAPI.Pub.VectorDouble.Parser, new[]{ "X", "Y", "Z" }, null, null, null)
           }));
     }
@@ -189,6 +189,7 @@ namespace UnityAPI.Pub {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EntityData(EntityData other) : this() {
+      id_ = other.id_;
       location_ = other.location_ != null ? other.location_.Clone() : null;
       orientation_ = other.orientation_ != null ? other.orientation_.Clone() : null;
       name_ = other.name_;
@@ -198,6 +199,17 @@ namespace UnityAPI.Pub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EntityData Clone() {
       return new EntityData(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 4;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
     }
 
     /// <summary>Field number for the "location" field.</summary>
@@ -246,6 +258,7 @@ namespace UnityAPI.Pub {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (!object.Equals(Location, other.Location)) return false;
       if (!object.Equals(Orientation, other.Orientation)) return false;
       if (Name != other.Name) return false;
@@ -255,6 +268,7 @@ namespace UnityAPI.Pub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (location_ != null) hash ^= Location.GetHashCode();
       if (orientation_ != null) hash ^= Orientation.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -283,6 +297,10 @@ namespace UnityAPI.Pub {
         output.WriteRawTag(26);
         output.WriteString(Name);
       }
+      if (Id != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Id);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -291,6 +309,9 @@ namespace UnityAPI.Pub {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
       if (location_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Location);
       }
@@ -310,6 +331,9 @@ namespace UnityAPI.Pub {
     public void MergeFrom(EntityData other) {
       if (other == null) {
         return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
       }
       if (other.location_ != null) {
         if (location_ == null) {
@@ -353,6 +377,10 @@ namespace UnityAPI.Pub {
           }
           case 26: {
             Name = input.ReadString();
+            break;
+          }
+          case 32: {
+            Id = input.ReadInt32();
             break;
           }
         }

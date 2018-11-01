@@ -1,5 +1,7 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
+using UnityAPI.Pub;
 using UnityUIWrapper.BL;
 
 namespace UnityUIWrapper.Model
@@ -16,7 +18,7 @@ namespace UnityUIWrapper.Model
         public string Name { get; set; }
         public int TypeId { get; set; }
         public ObjectClass Class { get; set; }
-
+        public EntityData Entity { get; set; }
         private readonly APIImplementation m_api;
 
         public EntityObject()
@@ -30,6 +32,19 @@ namespace UnityUIWrapper.Model
             {
                 return new RelayCommand(onCreateEntity, () => true);
             }
+        }
+
+        public ICommand EntityClickCommand
+        {
+            get
+            {
+                return new RelayCommand(onEntityClick, () => true);
+            }
+        }
+
+        private void onEntityClick()
+        {
+            m_api.SelectEntity(this.Entity.Id);
         }
 
         private void onCreateEntity()

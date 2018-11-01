@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
 using UnityAPI.Pub;
 using UnityUIWrapper.BL;
+using UnityUIWrapper.Model;
 
 namespace UnityUIWrapper.ViewModel
 {
@@ -22,12 +24,21 @@ namespace UnityUIWrapper.ViewModel
         }
 
 
-        public List<EntityData> EntitiesList => m_state.Entities;
+        public ObservableCollection<EntityObject> EntitiesList
+        {
+            get
+            {
+                m_entityDataList.Clear();
+                m_state.Entities.ForEach(entity => m_entityDataList.Add(new EntityObject() { Entity = entity, Name = entity.Name }));
+                return m_entityDataList;
+            }
+        }
 
         private void onEntitiesUpdatedEvent(Unit p_unit)
         {
             RaisePropertyChanged(() => EntitiesList);
         }
 
+    private ObservableCollection<EntityObject> m_entityDataList = new ObservableCollection<EntityObject>();
     }
 }

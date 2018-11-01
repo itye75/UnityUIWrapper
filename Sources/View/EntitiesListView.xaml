@@ -13,12 +13,12 @@
             <ListView ItemsSource="{Binding EntitiesList, Delay=1000}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Button 
+                        <Button Command="{Binding EntityClickCommand, Mode=OneTime}"
                             BorderThickness="0"
                             Focusable="False">
                             <Button.Content>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label  Content="{Binding Name}"></Label>
+                                    <Label Content="{Binding Name}"></Label>
                                 </StackPanel>
                             </Button.Content>
                         </Button>

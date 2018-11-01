@@ -44,6 +44,21 @@ namespace UnityUIWrapper.BL
             m_commHandler.Send(command.ToByteArray());
         }
 
+
+
+        public void SelectEntity(int p_entityId)
+        {
+            UnityGlobalCommand command = new UnityGlobalCommand();
+            command.OpCode = CommandOpCode.ObjectManagement;
+
+            command.ObjectManagement = new ObjectManagement();
+            command.ObjectManagement.OpCode = ObjectControlOpCode.Select;
+            command.ObjectManagement.Id = p_entityId;
+
+            m_commHandler.Send(command.ToByteArray());
+        }
+
+
         public void AddEntity(EntityObject p_entity)
         {
             UnityGlobalCommand command = new UnityGlobalCommand();

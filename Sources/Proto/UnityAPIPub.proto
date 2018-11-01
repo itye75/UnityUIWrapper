@@ -9,6 +9,7 @@ message EntitiesUpdateMsg
 
 message EntityData
 {
+	int32 Id=4;
 	VectorDouble location = 1;
 	VectorDouble orientation = 2;
 	string Name = 3;
