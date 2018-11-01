@@ -63,6 +63,22 @@ namespace UnityUIWrapper.BL
             m_propertyUpdatedEvent.OnNext(new Unit());
         }
 
+        public string ScenarioPath
+        {
+            get
+            {
+                return m_currentScenePath;
+            }
+            set
+            {
+                if (m_currentScenePath == value)
+                    return;
+
+                m_currentScenePath = value;
+                m_propertyUpdatedEvent.OnNext(new Unit());
+            }
+        }
+
         public CameraView SelectedCameraView
         {
             get { return m_cameraView; }
@@ -107,6 +123,8 @@ namespace UnityUIWrapper.BL
 
         private void updateEntities(StatusMessage p_msg)
         {
+            ElapsedTime = p_msg.Timestamp;
+            ScenarioPath = p_msg.ScenarioPath;
 
             foreach (var ent in p_msg.Entities)
             {

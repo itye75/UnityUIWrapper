@@ -5,6 +5,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
@@ -54,6 +55,13 @@ namespace UnityUIWrapper.ViewModel
             get { return TimeSpan.FromSeconds(m_state.ElapsedTime); }
         }
 
+        public bool IsPlayEnable
+        {
+            get
+            {
+                return !string.IsNullOrWhiteSpace(m_state.ScenarioPath);
+            }
+        }
 
         private void onPlay()
         {
@@ -73,6 +81,7 @@ namespace UnityUIWrapper.ViewModel
         private void onPropertyUpdate(Unit p_unit)
         {
             RaisePropertyChanged(() => ElapsedTime);
+            RaisePropertyChanged(() => IsPlayEnable);
         }
     }
 }
