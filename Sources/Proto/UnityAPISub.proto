@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package UnityAPI.Sub;
+
+
+enum CommandOpCode
+{
+	OBJECT_MANAGEMENT = 0;
+	CAMERA_CONTROL = 1;
+	TACTICAL_OBJECT = 2;
+	REMOTE_CONTROL = 3;
+}
+
+message UnityGlobalCommand
+{
+	CommandOpCode op_code = 1;
+	ObjectManagement object_management = 2;
+	CameraView camera_view = 3;
+	TacticalObjectManagement tactical_object_management = 4;
+	RemoteControlMessage remoteControl = 5;
+	
+}
+
+enum SceneManagerCommand
+{
+	SAVE = 0;
+	LOAD = 1;
+	PLAY = 2;
+	STOP = 3;
+	PAUSE = 4;
+}
+
+message RemoteControlMessage
+{
+	SceneManagerCommand opCode = 1;
+	string path = 2;
+}
+
+enum CameraView
+{
+	 PLAN_VIEW = 0;
+	 FREE_LOOK = 1;
+}
+
+message ObjectManagement
+{
+	ObjectControlOpCode op_code = 1;
+	int32 object_type = 2;
+	bool highlight = 3;
+}
+
+message TacticalObjectManagement
+{
+	TacticalObjectOpCode op_code = 1;
+}
+
+enum ObjectControlOpCode
+{
+	ADD = 0;
+	HIGHLIGHT_OBJECTS = 1;
+}
+
+enum TacticalObjectOpCode
+{
+	CREATE_ROUTE = 0;
+}

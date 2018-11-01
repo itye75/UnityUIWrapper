@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package UnityAPI.Pub;
+
+message EntitiesUpdateMsg
+{
+	repeated EntityData entities = 1;
+}
+
+message EntityData
+{
+	VectorDouble location = 1;
+	VectorDouble orientation = 2;
+	string Name = 3;
+}
+
+message VectorDouble
+{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+}

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="UnityUIWrapper.View.RemoteControllerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UnityUIWrapper.View"
+             mc:Ignorable="d" 
+             DataContext="{Binding RemoteController, Source={StaticResource Locator}}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+    
+            <Button BorderThickness="0" Margin="5,0,0,0"
+                    Command="{Binding PlayCommand, Mode=OneTime}">
+                <Button.Content>
+                    <Image Source="../Resources/icPlay.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button BorderThickness="0" Margin="5,0,0,0"
+                    Command="{Binding StopCommand, Mode=OneTime}">
+                <Button.Content>
+                    <Image Source="../Resources/icStop.png"></Image>
+                </Button.Content>
+            </Button>
+            <Button BorderThickness="0" Margin="5,0,0,0"
+                    Command="{Binding PauseCommand, Mode=OneTime}">
+                <Button.Content>
+                    <Image Source="../Resources/icPause.png"></Image>
+                </Button.Content>
+            </Button>
+            <Label Margin="10,0,0,0" VerticalAlignment="Center" Content="Scene Time: "/>
+            <Label VerticalAlignment="Center" Content="00:00:00"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
