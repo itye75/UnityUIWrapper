@@ -47,9 +47,17 @@ namespace UnityUIWrapper.BL
 
         public void Close()
         {
-            m_pushSocket.Unbind("tcp://127.0.0.1:40000");
-            m_receiverSocket.Disconnect("tcp://127.0.0.1:12346");
+            m_poller.Dispose();
 
+            m_pushSocket.Unbind("tcp://127.0.0.1:40000");
+            m_pushSocket.Close();
+            m_pushSocket.Dispose();
+
+            m_receiverSocket.Disconnect("tcp://127.0.0.1:12346");
+            m_receiverSocket.Close();
+            m_receiverSocket.Dispose();
+
+            m_context.Dispose();
         }
 
         public static CommunicationHandler Instance
