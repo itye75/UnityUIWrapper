@@ -104,6 +104,9 @@ namespace UnityUIWrapper.ViewModel
             p_window.Close();
             SelectedRoute = null;
             m_state.SelectedEntity = null;
+            m_api.HighlightRoute(new EntityData() { Id = -1 });
+
+
         }
 
         private void onClose(MetroWindow p_window)
@@ -111,6 +114,8 @@ namespace UnityUIWrapper.ViewModel
             p_window.Close();
             SelectedRoute = null;
             m_state.SelectedEntity = null;
+            m_api.HighlightRoute(new EntityData(){Id = -1});
+
         }
     }
 }
