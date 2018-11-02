@@ -29,9 +29,20 @@ namespace UnityUIWrapper.ViewModel
             CameraViewTypes = new List<string>() { "Plan View", "Free Look" };
         }
 
+        public string WindowTitle
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(m_state.ScenarioPath))
+                    return string.Format("UniScene : New Scenario");
+
+                return string.Format("UniScene : Scenario - {0}", m_state.ScenarioPath);
+            }
+        }
+
         public bool HighlightEntities
         {
-            get { return m_state.HighlightEntities;}
+            get { return m_state.HighlightEntities; }
             set { m_state.HighlightEntities = value; }
         }
 
@@ -90,6 +101,7 @@ namespace UnityUIWrapper.ViewModel
         {
             RaisePropertyChanged(() => HighlightEntities);
             RaisePropertyChanged(() => SelectedCameraView);
+            RaisePropertyChanged(() => WindowTitle);
         }
 
 

@@ -131,6 +131,7 @@
     <Compile Include="BL\UnityHwndHost.cs" />
     <Compile Include="ViewModel\EntityDetailsViewModel.cs" />
     <Compile Include="ViewModel\RouteSelectorViewModel.cs" />
+    <Compile Include="ViewModel\WeatherViewModel.cs" />
     <Compile Include="View\RouteSelectorView.xaml.cs">
       <DependentUpon>RouteSelectorView.xaml</DependentUpon>
     </Compile>
@@ -149,6 +150,9 @@
     </Compile>
     <Compile Include="View\EntityDetailsView.xaml.cs">
       <DependentUpon>EntityDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WeatherView.xaml.cs">
+      <DependentUpon>WeatherView.xaml</DependentUpon>
     </Compile>
     <Page Include="View\EntitiesListView.xaml">
       <SubType>Designer</SubType>
@@ -186,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EntityDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WeatherView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

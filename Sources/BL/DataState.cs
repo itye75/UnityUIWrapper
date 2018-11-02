@@ -34,6 +34,17 @@ namespace UnityUIWrapper.BL
 
         public EntityData SelectedEntity { get; set; }
 
+        public float Intensity
+        {
+            get { return m_rainIntensity; }
+            set
+            {
+                m_rainIntensity = value;
+                m_propertyUpdatedEvent.OnNext(new Unit());
+            }
+
+        }
+
         public bool HighlightEntities
         {
             get { return m_highlightObjects; }

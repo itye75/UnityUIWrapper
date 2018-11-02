@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
-        Title="Unity Test UI" Height="450" Width="800">
+        Title="{Binding WindowTitle}" Height="450" Width="800">
 
     <mah:MetroWindow.Resources>
         <converters:CameraViewConverter x:Key="CameraViewConverter"/>
@@ -68,10 +68,13 @@
                               SelectedItem="{Binding SelectedCameraView}"
                               ItemsSource="{Binding CameraViewTypes, Mode=OneTime}" 
                               ToolTip="Select Camera"/>
-                    <CheckBox DockPanel.Dock="Left" Content="Highlight Entities" IsChecked="{Binding HighlightEntities}"></CheckBox>
-                    <view:RemoteControllerView DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="20,5,5,5"/>
-                </DockPanel>
 
+                    <view:WeatherView  DockPanel.Dock="Right"/>
+                    <CheckBox DockPanel.Dock="Left" Content="Highlight Entities" IsChecked="{Binding HighlightEntities}"/>
+                    <view:RemoteControllerView DockPanel.Dock="Top" HorizontalAlignment="Center" Margin="20,5,5,5"/>
+                    
+                </DockPanel>
+           
                 <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="150"></ColumnDefinition>
                     <ColumnDefinition Width="150"></ColumnDefinition>

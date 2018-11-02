@@ -15,6 +15,7 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
+using UnityUIWrapper.View;
 
 namespace UnityUIWrapper.ViewModel
 {
@@ -38,6 +39,7 @@ namespace UnityUIWrapper.ViewModel
             SimpleIoc.Default.Register<RemoteControllerViewModel>();
             SimpleIoc.Default.Register<ObjectsPanelViewModel>();
             SimpleIoc.Default.Register<RouteSelectorViewModel>();
+            SimpleIoc.Default.Register<WeatherViewModel>();
         }
 
         public MainViewModel Main
@@ -47,6 +49,17 @@ namespace UnityUIWrapper.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
+
+        public WeatherViewModel Weather
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<WeatherViewModel>();
+            }
+        }
+
+
+
 
 
         public EntitiesListViewModel Entities

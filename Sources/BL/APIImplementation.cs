@@ -166,7 +166,16 @@ namespace UnityUIWrapper.BL
             command.ObjectManagement.RouteId = p_route.Id;
 
             m_commHandler.Send(command.ToByteArray());
+        }
 
+        public void SetRainIntensity(float p_intensity)
+        {
+            UnityGlobalCommand command = new UnityGlobalCommand();
+            command.OpCode = CommandOpCode.WeatherControl;
+            command.WeatherControl = new WeatherControlMessage();
+            command.WeatherControl.RainIntensity = p_intensity;
+
+            m_commHandler.Send(command.ToByteArray());
         }
     }
 }
