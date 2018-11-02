@@ -1,16 +1,18 @@
-﻿<Window x:Class="UnityUIWrapper.View.RouteSelectorView"
+﻿<mah:MetroWindow
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+    x:Class="UnityUIWrapper.View.RouteSelectorView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UnityUIWrapper.View"
-        WindowStyle="None"
+      
         DataContext="{Binding RouteSelctor, Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="Route Selector" Height="450" Width="800">
+        Title="Route Selector" Height="250" Width="500">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="80"></RowDefinition>
         </Grid.RowDefinitions>
@@ -19,7 +21,8 @@
             <ListView
                 x:Name="RouteList"
                 Margin="10,0,10,0"
-                ItemsSource="{Binding Routes}">
+                ItemsSource="{Binding Routes}"
+                SelectedItem="{Binding SelectedRoute, Mode=TwoWay}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Label Content="{Binding Name}"></Label>
@@ -28,8 +31,8 @@
             </ListView>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-            <Button Margin="20" Content="Select"/>
-            <Button Margin="20" Content="Close"/>
+            <Button Command="{Binding SelectCommand, Mode=OneTime}" Margin="20" BorderThickness="0" Content="Select"/>
+            <Button Margin="20" BorderThickness="0" Content="Close"/>
         </StackPanel>
     </Grid>
-</Window>
+</mah:MetroWindow>

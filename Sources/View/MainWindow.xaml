@@ -9,7 +9,7 @@
         xmlns:view="clr-namespace:UnityUIWrapper.View"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-                WindowState="Maximized"
+        WindowState="Maximized"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
         Title="Unity Test UI" Height="450" Width="800">
 

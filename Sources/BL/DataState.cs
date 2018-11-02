@@ -18,6 +18,8 @@ namespace UnityUIWrapper.BL
         private readonly ISubject<Unit> m_entitiesUpdatedEvent = new Subject<Unit>();
         private bool m_highlightObjects = false;
         private CameraView m_cameraView = CameraView.PlanView;
+        private static object s_locker = new object();
+
 
         private List<EntityData> m_routes = new List<EntityData>();
         private List<EntityData> m_entities = new List<EntityData>();
@@ -28,6 +30,8 @@ namespace UnityUIWrapper.BL
         private long m_elapsedTime = 0;
 
         public List<EntityObject> ObjectTypeList { get; set; }
+
+        public EntityData SelectedEntity { get; set; }
 
         public bool HighlightEntities
         {
@@ -92,6 +96,10 @@ namespace UnityUIWrapper.BL
 
             m_commHandler.StatusUpdateEvent += updateEntities;
 
+        }
+
+        public void InitDummyEntities()
+        {
             ObjectTypeList = new List<EntityObject>();
 
             ObjectTypeList.Add(new EntityObject
@@ -170,12 +178,15 @@ namespace UnityUIWrapper.BL
         {
             get
             {
-                if (s_state == null)
+                lock(s_locker)
                 {
-                    s_state = new DataState();
-                }
+                    if (s_state == null)
+                    {
+                        s_state = new DataState();
+                    }
 
-                return s_state;
+                    return s_state;
+                }
             }
         }
 

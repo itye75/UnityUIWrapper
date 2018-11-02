@@ -23,10 +23,12 @@ namespace UnityUIWrapper.Model
         public ObjectClass Class { get; set; }
         public EntityData Entity { get; set; }
         private readonly APIImplementation m_api;
+        private DataState m_state;
 
         public EntityObject()
         {
             m_api = APIImplementation.Instance;
+            m_state = DataState.Instance;
         }
 
         public ICommand CreateEntityCommand
@@ -55,6 +57,7 @@ namespace UnityUIWrapper.Model
 
         private void onRouteSelector()
         {
+            m_state.SelectedEntity = Entity;
             RouteSelectorView view = new RouteSelectorView();
             view.Show();
             

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using UnityAPI.Pub;
 using UnityAPI.Sub;
 using UnityUIWrapper.Model;
 
@@ -140,6 +141,18 @@ namespace UnityUIWrapper.BL
             command.OpCode = CommandOpCode.RemoteControl;
             command.RemoteControl = new RemoteControlMessage();
             command.RemoteControl.OpCode = SceneManagerCommand.Pause;
+
+            m_commHandler.Send(command.ToByteArray());
+        }
+
+        public void AttachRouteToEntity(EntityData p_entity, EntityData p_route)
+        {
+            UnityGlobalCommand command = new UnityGlobalCommand();
+            command.OpCode = CommandOpCode.ObjectManagement;
+            command.ObjectManagement = new ObjectManagement();
+            command.ObjectManagement.OpCode = ObjectControlOpCode.AttachRoute;
+            command.ObjectManagement.RouteId = p_route.Id;
+            command.ObjectManagement.Id = p_entity.Id;
 
             m_commHandler.Send(command.ToByteArray());
         }

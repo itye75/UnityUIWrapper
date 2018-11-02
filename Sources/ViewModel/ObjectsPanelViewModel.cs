@@ -28,6 +28,7 @@ namespace UnityUIWrapper.ViewModel
         public ObjectsPanelViewModel()
         {
             m_state = DataState.Instance;
+            m_state.InitDummyEntities();
             m_state.PropertyUpdatedEvent.ObserveOnDispatcher().Subscribe(onPropertyUpdate);
         }
 
