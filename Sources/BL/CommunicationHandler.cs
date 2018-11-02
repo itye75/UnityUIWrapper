@@ -26,8 +26,8 @@ namespace UnityUIWrapper.BL
         private CommunicationHandler()
         {
             m_context = NetMQContext.Create();
-            //m_pushSocket = m_context.CreatePublisherSocket();
-            //m_pushSocket.Bind("tcp://127.0.0.1:40000");
+            m_pushSocket = m_context.CreatePublisherSocket();
+            m_pushSocket.Bind("tcp://127.0.0.1:40000");
 
             m_receiverSocket = m_context.CreateSubscriberSocket();
             m_poller = new Poller(m_receiverSocket);
@@ -73,7 +73,7 @@ namespace UnityUIWrapper.BL
 
         public void Send(byte[] p_msg)
         {
-            // m_pushSocket.SendFrame(p_msg);
+            m_pushSocket.SendFrame(p_msg);
         }
 
     

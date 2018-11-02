@@ -67,7 +67,7 @@
         <Grid Visibility="{Binding IsTacticalObjectView, Converter={StaticResource BooleanToVisibilityConverter}}"
             Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
             <Label HorizontalAlignment="Center" Content="Tactical Objects"/>

@@ -60,6 +60,8 @@ namespace UnityUIWrapper.Model
 
         private void onRouteSelector()
         {
+            m_api.SelectEntity(this.Entity.Id);
+
             ContextMenu contextMenu = new ContextMenu();
             MenuItem item = new MenuItem();
             item.Header = "Attach To Route";
