@@ -6,6 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UnityUIWrapper.View"
+        x:Name="SelectRouteWindow"
       
         DataContext="{Binding RouteSelctor, Source={StaticResource Locator}}"
         mc:Ignorable="d"
@@ -31,8 +32,8 @@
             </ListView>
         </ScrollViewer>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-            <Button Command="{Binding SelectCommand, Mode=OneTime}" Margin="20" BorderThickness="0" Content="Select"/>
-            <Button Margin="20" BorderThickness="0" Content="Close"/>
+            <Button IsEnabled="{Binding IsSelectEnabled}" Command="{Binding SelectCommand, Mode=OneTime}" CommandParameter="{Binding ElementName=SelectRouteWindow}" Margin="20" BorderThickness="0" Content="Select"/>
+            <Button Margin="20" BorderThickness="0" Content="Close" Command="{Binding CloseWindow, Mode=OneTime}" CommandParameter="{Binding ElementName=SelectRouteWindow}" />
         </StackPanel>
     </Grid>
 </mah:MetroWindow>

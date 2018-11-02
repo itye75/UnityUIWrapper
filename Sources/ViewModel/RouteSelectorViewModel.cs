@@ -9,6 +9,7 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MahApps.Metro.Controls;
 using UnityAPI.Pub;
 using UnityUIWrapper.BL;
 
@@ -57,7 +58,7 @@ namespace UnityUIWrapper.ViewModel
         {
             get
             {
-                return new RelayCommand(onSelect, () => true);
+                return new RelayCommand<MetroWindow>(onSelect);
             }
         }
 
@@ -68,11 +69,30 @@ namespace UnityUIWrapper.ViewModel
                 return SelectedRoute != null;
             }
         }
-        
 
-        private void onSelect()
+        public ICommand CloseWindow
         {
+            get
+            {
+                return new RelayCommand<MetroWindow>(onClose);
+            }
+        }
+
+
+        private void onSelect(MetroWindow p_window)
+        {
+            SelectedRoute = null;
             m_api.AttachRouteToEntity(m_state.SelectedEntity, SelectedRoute);
+            p_window.Close();
+            SelectedRoute = null;
+            m_state.SelectedEntity = null;
+        }
+
+        private void onClose(MetroWindow p_window)
+        {
+            p_window.Close();
+            SelectedRoute = null;
+            m_state.SelectedEntity = null;
         }
     }
 }
