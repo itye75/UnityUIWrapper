@@ -63,6 +63,15 @@ namespace UnityUIWrapper.ViewModel
             }
         }
 
+
+        public ICommand SelectedRouteChanged
+        {
+            get
+            {
+                return new RelayCommand(onSelectedRouteChanged, (() => true));
+            }
+        }
+
         public bool IsSelectEnabled
         {
             get
@@ -79,6 +88,11 @@ namespace UnityUIWrapper.ViewModel
             }
         }
 
+        private void onSelectedRouteChanged()
+        {
+            if (SelectedRoute != null)
+                m_api.HighlightRoute(SelectedRoute);
+        }
 
         private void onSelect(MetroWindow p_window)
         {

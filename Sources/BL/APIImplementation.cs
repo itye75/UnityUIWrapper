@@ -156,5 +156,17 @@ namespace UnityUIWrapper.BL
 
             m_commHandler.Send(command.ToByteArray());
         }
+
+        public void HighlightRoute(EntityData p_route)
+        {
+            UnityGlobalCommand command = new UnityGlobalCommand();
+            command.OpCode = CommandOpCode.ObjectManagement;
+            command.ObjectManagement = new ObjectManagement();
+            command.ObjectManagement.OpCode = ObjectControlOpCode.HighlightObjects;
+            command.ObjectManagement.RouteId = p_route.Id;
+
+            m_commHandler.Send(command.ToByteArray());
+
+        }
     }
 }

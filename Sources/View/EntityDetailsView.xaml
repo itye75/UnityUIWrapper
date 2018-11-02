@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{Binding EntityDetailsViewModel, Source={StaticResource Locator}}">
-    <Grid>
-        <TextBlock Text="{Binding SelectedEntityDetails,Mode=OneWay}" FontSize="16"/>
+    <Grid Margin="10">
+        <TextBlock Text="{Binding SelectedEntityDetails,Mode=OneWay}"/>
     </Grid>
 </UserControl>

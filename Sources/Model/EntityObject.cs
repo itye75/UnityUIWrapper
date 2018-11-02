@@ -64,6 +64,12 @@ namespace UnityUIWrapper.Model
             MenuItem item = new MenuItem();
             item.Header = "Attach To Route";
             item.Command = new RelayCommand(showRoutesMenu);
+
+            MenuItem item2 = new MenuItem();
+            item2.Header = "Select";
+            item2.Command = new RelayCommand(onEntityClick);
+
+            contextMenu.Items.Add(item2);
             contextMenu.Items.Add(item);
             contextMenu.IsOpen = true;
         }

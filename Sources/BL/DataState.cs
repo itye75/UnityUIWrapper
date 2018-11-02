@@ -20,11 +20,12 @@ namespace UnityUIWrapper.BL
         private CameraView m_cameraView = CameraView.PlanView;
         private static object s_locker = new object();
 
-
         private List<EntityData> m_routes = new List<EntityData>();
         private List<EntityData> m_entities = new List<EntityData>();
 
         private string m_currentScenePath;
+
+        private float m_rainIntensity = 0;
 
         private ScenarioState m_state = ScenarioState.Init;
         private long m_elapsedTime = 0;
@@ -134,7 +135,8 @@ namespace UnityUIWrapper.BL
         {
             ElapsedTime = p_msg.Timestamp;
             ScenarioPath = p_msg.ScenarioPath;
-
+            HighlightEntities = p_msg.IsObjectHighlighted;
+            //m_rainIntensity = p_msg.RainIntensity;
 
             m_routes = p_msg.Routes.ToList();
             m_propertyUpdatedEvent.OnNext(new Unit());
