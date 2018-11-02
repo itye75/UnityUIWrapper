@@ -12,6 +12,7 @@ using System.Windows.Input;
 using MahApps.Metro.Controls;
 using UnityAPI.Pub;
 using UnityUIWrapper.BL;
+using System.Windows.Controls;
 
 namespace UnityUIWrapper.ViewModel
 {
@@ -81,7 +82,6 @@ namespace UnityUIWrapper.ViewModel
 
         private void onSelect(MetroWindow p_window)
         {
-            SelectedRoute = null;
             m_api.AttachRouteToEntity(m_state.SelectedEntity, SelectedRoute);
             p_window.Close();
             SelectedRoute = null;

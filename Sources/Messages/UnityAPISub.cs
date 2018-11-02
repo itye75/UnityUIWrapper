@@ -24,33 +24,37 @@ namespace UnityAPI.Sub {
     static UnityAPISubReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFVbml0eUFQSVN1Yi5wcm90bxIMVW5pdHlBUEkuU3ViIrMCChJVbml0eUds",
+            "ChFVbml0eUFQSVN1Yi5wcm90bxIMVW5pdHlBUEkuU3ViIvACChJVbml0eUds",
             "b2JhbENvbW1hbmQSLAoHb3BfY29kZRgBIAEoDjIbLlVuaXR5QVBJLlN1Yi5D",
             "b21tYW5kT3BDb2RlEjkKEW9iamVjdF9tYW5hZ2VtZW50GAIgASgLMh4uVW5p",
             "dHlBUEkuU3ViLk9iamVjdE1hbmFnZW1lbnQSLQoLY2FtZXJhX3ZpZXcYAyAB",
             "KA4yGC5Vbml0eUFQSS5TdWIuQ2FtZXJhVmlldxJKChp0YWN0aWNhbF9vYmpl",
             "Y3RfbWFuYWdlbWVudBgEIAEoCzImLlVuaXR5QVBJLlN1Yi5UYWN0aWNhbE9i",
             "amVjdE1hbmFnZW1lbnQSOQoNcmVtb3RlQ29udHJvbBgFIAEoCzIiLlVuaXR5",
-            "QVBJLlN1Yi5SZW1vdGVDb250cm9sTWVzc2FnZSJXChRSZW1vdGVDb250cm9s",
-            "TWVzc2FnZRIxCgZvcENvZGUYASABKA4yIS5Vbml0eUFQSS5TdWIuU2NlbmVN",
-            "YW5hZ2VyQ29tbWFuZBIMCgRwYXRoGAIgASgJIosBChBPYmplY3RNYW5hZ2Vt",
-            "ZW50EjIKB29wX2NvZGUYASABKA4yIS5Vbml0eUFQSS5TdWIuT2JqZWN0Q29u",
-            "dHJvbE9wQ29kZRIKCgJJZBgCIAEoBRITCgtvYmplY3RfdHlwZRgDIAEoBRIR",
-            "CgloaWdobGlnaHQYBCABKAgSDwoHcm91dGVJZBgFIAEoBSJPChhUYWN0aWNh",
-            "bE9iamVjdE1hbmFnZW1lbnQSMwoHb3BfY29kZRgBIAEoDjIiLlVuaXR5QVBJ",
-            "LlN1Yi5UYWN0aWNhbE9iamVjdE9wQ29kZSpjCg1Db21tYW5kT3BDb2RlEhUK",
-            "EU9CSkVDVF9NQU5BR0VNRU5UEAASEgoOQ0FNRVJBX0NPTlRST0wQARITCg9U",
-            "QUNUSUNBTF9PQkpFQ1QQAhISCg5SRU1PVEVfQ09OVFJPTBADKkgKE1NjZW5l",
-            "TWFuYWdlckNvbW1hbmQSCAoEU0FWRRAAEggKBExPQUQQARIICgRQTEFZEAIS",
-            "CAoEU1RPUBADEgkKBVBBVVNFEAQqKgoKQ2FtZXJhVmlldxINCglQTEFOX1ZJ",
-            "RVcQABINCglGUkVFX0xPT0sQASpeChNPYmplY3RDb250cm9sT3BDb2RlEgcK",
-            "A0FERBAAEhUKEUhJR0hMSUdIVF9PQkpFQ1RTEAESCgoGUmVtb3ZlEAISCgoG",
-            "U2VsZWN0EAMSDwoLQXR0YWNoUm91dGUQBSooChRUYWN0aWNhbE9iamVjdE9w",
-            "Q29kZRIQCgxDUkVBVEVfUk9VVEUQAGIGcHJvdG8z"));
+            "QVBJLlN1Yi5SZW1vdGVDb250cm9sTWVzc2FnZRI7Cg53ZWF0aGVyQ29udHJv",
+            "bBgGIAEoCzIjLlVuaXR5QVBJLlN1Yi5XZWF0aGVyQ29udHJvbE1lc3NhZ2Ui",
+            "LwoVV2VhdGhlckNvbnRyb2xNZXNzYWdlEhYKDnJhaW5faW50ZW5zaXR5GAEg",
+            "ASgCIlcKFFJlbW90ZUNvbnRyb2xNZXNzYWdlEjEKBm9wQ29kZRgBIAEoDjIh",
+            "LlVuaXR5QVBJLlN1Yi5TY2VuZU1hbmFnZXJDb21tYW5kEgwKBHBhdGgYAiAB",
+            "KAkiiwEKEE9iamVjdE1hbmFnZW1lbnQSMgoHb3BfY29kZRgBIAEoDjIhLlVu",
+            "aXR5QVBJLlN1Yi5PYmplY3RDb250cm9sT3BDb2RlEgoKAklkGAIgASgFEhMK",
+            "C29iamVjdF90eXBlGAMgASgFEhEKCWhpZ2hsaWdodBgEIAEoCBIPCgdyb3V0",
+            "ZUlkGAUgASgFIk8KGFRhY3RpY2FsT2JqZWN0TWFuYWdlbWVudBIzCgdvcF9j",
+            "b2RlGAEgASgOMiIuVW5pdHlBUEkuU3ViLlRhY3RpY2FsT2JqZWN0T3BDb2Rl",
+            "KngKDUNvbW1hbmRPcENvZGUSFQoRT0JKRUNUX01BTkFHRU1FTlQQABISCg5D",
+            "QU1FUkFfQ09OVFJPTBABEhMKD1RBQ1RJQ0FMX09CSkVDVBACEhIKDlJFTU9U",
+            "RV9DT05UUk9MEAMSEwoPV0VBVEhFUl9DT05UUk9MEAQqSAoTU2NlbmVNYW5h",
+            "Z2VyQ29tbWFuZBIICgRTQVZFEAASCAoETE9BRBABEggKBFBMQVkQAhIICgRT",
+            "VE9QEAMSCQoFUEFVU0UQBCoqCgpDYW1lcmFWaWV3Eg0KCVBMQU5fVklFVxAA",
+            "Eg0KCUZSRUVfTE9PSxABKm8KE09iamVjdENvbnRyb2xPcENvZGUSBwoDQURE",
+            "EAASFQoRSElHSExJR0hUX09CSkVDVFMQARIKCgZSZW1vdmUQAhIKCgZTZWxl",
+            "Y3QQAxIPCgtBdHRhY2hSb3V0ZRAFEg8KC1NlbGVjdFJvdXRlEAYqKAoUVGFj",
+            "dGljYWxPYmplY3RPcENvZGUSEAoMQ1JFQVRFX1JPVVRFEABiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Sub.CommandOpCode), typeof(global::UnityAPI.Sub.SceneManagerCommand), typeof(global::UnityAPI.Sub.CameraView), typeof(global::UnityAPI.Sub.ObjectControlOpCode), typeof(global::UnityAPI.Sub.TacticalObjectOpCode), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.UnityGlobalCommand), global::UnityAPI.Sub.UnityGlobalCommand.Parser, new[]{ "OpCode", "ObjectManagement", "CameraView", "TacticalObjectManagement", "RemoteControl" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.UnityGlobalCommand), global::UnityAPI.Sub.UnityGlobalCommand.Parser, new[]{ "OpCode", "ObjectManagement", "CameraView", "TacticalObjectManagement", "RemoteControl", "WeatherControl" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.WeatherControlMessage), global::UnityAPI.Sub.WeatherControlMessage.Parser, new[]{ "RainIntensity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.RemoteControlMessage), global::UnityAPI.Sub.RemoteControlMessage.Parser, new[]{ "OpCode", "Path" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.ObjectManagement), global::UnityAPI.Sub.ObjectManagement.Parser, new[]{ "OpCode", "Id", "ObjectType", "Highlight", "RouteId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Sub.TacticalObjectManagement), global::UnityAPI.Sub.TacticalObjectManagement.Parser, new[]{ "OpCode" }, null, null, null)
@@ -65,6 +69,7 @@ namespace UnityAPI.Sub {
     [pbr::OriginalName("CAMERA_CONTROL")] CameraControl = 1,
     [pbr::OriginalName("TACTICAL_OBJECT")] TacticalObject = 2,
     [pbr::OriginalName("REMOTE_CONTROL")] RemoteControl = 3,
+    [pbr::OriginalName("WEATHER_CONTROL")] WeatherControl = 4,
   }
 
   public enum SceneManagerCommand {
@@ -86,6 +91,7 @@ namespace UnityAPI.Sub {
     [pbr::OriginalName("Remove")] Remove = 2,
     [pbr::OriginalName("Select")] Select = 3,
     [pbr::OriginalName("AttachRoute")] AttachRoute = 5,
+    [pbr::OriginalName("SelectRoute")] SelectRoute = 6,
   }
 
   public enum TacticalObjectOpCode {
@@ -125,6 +131,7 @@ namespace UnityAPI.Sub {
       cameraView_ = other.cameraView_;
       tacticalObjectManagement_ = other.tacticalObjectManagement_ != null ? other.tacticalObjectManagement_.Clone() : null;
       remoteControl_ = other.remoteControl_ != null ? other.remoteControl_.Clone() : null;
+      weatherControl_ = other.weatherControl_ != null ? other.weatherControl_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -188,6 +195,17 @@ namespace UnityAPI.Sub {
       }
     }
 
+    /// <summary>Field number for the "weatherControl" field.</summary>
+    public const int WeatherControlFieldNumber = 6;
+    private global::UnityAPI.Sub.WeatherControlMessage weatherControl_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::UnityAPI.Sub.WeatherControlMessage WeatherControl {
+      get { return weatherControl_; }
+      set {
+        weatherControl_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UnityGlobalCommand);
@@ -206,6 +224,7 @@ namespace UnityAPI.Sub {
       if (CameraView != other.CameraView) return false;
       if (!object.Equals(TacticalObjectManagement, other.TacticalObjectManagement)) return false;
       if (!object.Equals(RemoteControl, other.RemoteControl)) return false;
+      if (!object.Equals(WeatherControl, other.WeatherControl)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -217,6 +236,7 @@ namespace UnityAPI.Sub {
       if (CameraView != 0) hash ^= CameraView.GetHashCode();
       if (tacticalObjectManagement_ != null) hash ^= TacticalObjectManagement.GetHashCode();
       if (remoteControl_ != null) hash ^= RemoteControl.GetHashCode();
+      if (weatherControl_ != null) hash ^= WeatherControl.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -250,6 +270,10 @@ namespace UnityAPI.Sub {
         output.WriteRawTag(42);
         output.WriteMessage(RemoteControl);
       }
+      if (weatherControl_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(WeatherControl);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -272,6 +296,9 @@ namespace UnityAPI.Sub {
       }
       if (remoteControl_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(RemoteControl);
+      }
+      if (weatherControl_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeatherControl);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -307,6 +334,12 @@ namespace UnityAPI.Sub {
           remoteControl_ = new global::UnityAPI.Sub.RemoteControlMessage();
         }
         RemoteControl.MergeFrom(other.RemoteControl);
+      }
+      if (other.weatherControl_ != null) {
+        if (weatherControl_ == null) {
+          weatherControl_ = new global::UnityAPI.Sub.WeatherControlMessage();
+        }
+        WeatherControl.MergeFrom(other.WeatherControl);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -348,6 +381,142 @@ namespace UnityAPI.Sub {
             input.ReadMessage(remoteControl_);
             break;
           }
+          case 50: {
+            if (weatherControl_ == null) {
+              weatherControl_ = new global::UnityAPI.Sub.WeatherControlMessage();
+            }
+            input.ReadMessage(weatherControl_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class WeatherControlMessage : pb::IMessage<WeatherControlMessage> {
+    private static readonly pb::MessageParser<WeatherControlMessage> _parser = new pb::MessageParser<WeatherControlMessage>(() => new WeatherControlMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<WeatherControlMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeatherControlMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeatherControlMessage(WeatherControlMessage other) : this() {
+      rainIntensity_ = other.rainIntensity_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public WeatherControlMessage Clone() {
+      return new WeatherControlMessage(this);
+    }
+
+    /// <summary>Field number for the "rain_intensity" field.</summary>
+    public const int RainIntensityFieldNumber = 1;
+    private float rainIntensity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float RainIntensity {
+      get { return rainIntensity_; }
+      set {
+        rainIntensity_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as WeatherControlMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(WeatherControlMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RainIntensity, other.RainIntensity)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RainIntensity != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RainIntensity);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (RainIntensity != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(RainIntensity);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RainIntensity != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(WeatherControlMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RainIntensity != 0F) {
+        RainIntensity = other.RainIntensity;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            RainIntensity = input.ReadFloat();
+            break;
+          }
         }
       }
     }
@@ -362,7 +531,7 @@ namespace UnityAPI.Sub {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[1]; }
+      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -519,7 +688,7 @@ namespace UnityAPI.Sub {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[2]; }
+      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -760,7 +929,7 @@ namespace UnityAPI.Sub {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[3]; }
+      get { return global::UnityAPI.Sub.UnityAPISubReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -9,6 +9,7 @@ enum CommandOpCode
 	CAMERA_CONTROL = 1;
 	TACTICAL_OBJECT = 2;
 	REMOTE_CONTROL = 3;
+	WEATHER_CONTROL = 4;
 }
 
 message UnityGlobalCommand
@@ -18,6 +19,7 @@ message UnityGlobalCommand
 	CameraView camera_view = 3;
 	TacticalObjectManagement tactical_object_management = 4;
 	RemoteControlMessage remoteControl = 5;
+	WeatherControlMessage weatherControl = 6;
 }
 
 enum SceneManagerCommand
@@ -27,6 +29,11 @@ enum SceneManagerCommand
 	PLAY = 2;
 	STOP = 3;
 	PAUSE = 4;
+}
+
+message WeatherControlMessage
+{
+	float rain_intensity = 1;
 }
 
 message RemoteControlMessage
@@ -62,9 +69,12 @@ enum ObjectControlOpCode
 	Remove = 2;
 	Select = 3;
 	AttachRoute = 5;
+	SelectRoute = 6;
 }
 
 enum TacticalObjectOpCode
 {
 	CREATE_ROUTE = 0;
 }
+
+

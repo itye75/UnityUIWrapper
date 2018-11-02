@@ -24,21 +24,22 @@ namespace UnityAPI.Pub {
     static UnityAPIPubReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIroBCg1TdGF0dXNN",
+            "ChFVbml0eUFQSVB1Yi5wcm90bxIMVW5pdHlBUEkuUHViIvEBCg1TdGF0dXNN",
             "ZXNzYWdlEioKCGVudGl0aWVzGAEgAygLMhguVW5pdHlBUEkuUHViLkVudGl0",
             "eURhdGESKAoGcm91dGVzGAIgAygLMhguVW5pdHlBUEkuUHViLkVudGl0eURh",
             "dGESKgoFc3RhdGUYAyABKA4yGy5Vbml0eUFQSS5QdWIuU2NlbmFyaW9TdGF0",
-            "ZRIRCgl0aW1lc3RhbXAYBCABKAMSFAoMc2NlbmFyaW9QYXRoGAUgASgJIoUB",
-            "CgpFbnRpdHlEYXRhEgoKAklkGAQgASgFEiwKCGxvY2F0aW9uGAEgASgLMhou",
-            "VW5pdHlBUEkuUHViLlZlY3RvckRvdWJsZRIvCgtvcmllbnRhdGlvbhgCIAEo",
-            "CzIaLlVuaXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSDAoETmFtZRgDIAEoCSIv",
-            "CgxWZWN0b3JEb3VibGUSCQoBeBgBIAEoARIJCgF5GAIgASgBEgkKAXoYAyAB",
-            "KAEqPwoNU2NlbmFyaW9TdGF0ZRIICgRJbml0EAASCwoHU3RvcHBlZBABEgsK",
-            "B1BsYXlpbmcQAhIKCgZQYXVzZWQQA2IGcHJvdG8z"));
+            "ZRIRCgl0aW1lc3RhbXAYBCABKAMSFAoMc2NlbmFyaW9QYXRoGAUgASgJEhYK",
+            "DnJhaW5faW50ZW5zaXR5GAYgASgCEh0KFWlzX29iamVjdF9oaWdobGlnaHRl",
+            "ZBgHIAEoCCKFAQoKRW50aXR5RGF0YRIKCgJJZBgEIAEoBRIsCghsb2NhdGlv",
+            "bhgBIAEoCzIaLlVuaXR5QVBJLlB1Yi5WZWN0b3JEb3VibGUSLwoLb3JpZW50",
+            "YXRpb24YAiABKAsyGi5Vbml0eUFQSS5QdWIuVmVjdG9yRG91YmxlEgwKBE5h",
+            "bWUYAyABKAkiLwoMVmVjdG9yRG91YmxlEgkKAXgYASABKAESCQoBeRgCIAEo",
+            "ARIJCgF6GAMgASgBKj8KDVNjZW5hcmlvU3RhdGUSCAoESW5pdBAAEgsKB1N0",
+            "b3BwZWQQARILCgdQbGF5aW5nEAISCgoGUGF1c2VkEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UnityAPI.Pub.ScenarioState), }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.StatusMessage), global::UnityAPI.Pub.StatusMessage.Parser, new[]{ "Entities", "Routes", "State", "Timestamp", "ScenarioPath" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.StatusMessage), global::UnityAPI.Pub.StatusMessage.Parser, new[]{ "Entities", "Routes", "State", "Timestamp", "ScenarioPath", "RainIntensity", "IsObjectHighlighted" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.EntityData), global::UnityAPI.Pub.EntityData.Parser, new[]{ "Id", "Location", "Orientation", "Name" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::UnityAPI.Pub.VectorDouble), global::UnityAPI.Pub.VectorDouble.Parser, new[]{ "X", "Y", "Z" }, null, null, null)
           }));
@@ -87,6 +88,8 @@ namespace UnityAPI.Pub {
       state_ = other.state_;
       timestamp_ = other.timestamp_;
       scenarioPath_ = other.scenarioPath_;
+      rainIntensity_ = other.rainIntensity_;
+      isObjectHighlighted_ = other.isObjectHighlighted_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -148,6 +151,28 @@ namespace UnityAPI.Pub {
       }
     }
 
+    /// <summary>Field number for the "rain_intensity" field.</summary>
+    public const int RainIntensityFieldNumber = 6;
+    private float rainIntensity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float RainIntensity {
+      get { return rainIntensity_; }
+      set {
+        rainIntensity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_object_highlighted" field.</summary>
+    public const int IsObjectHighlightedFieldNumber = 7;
+    private bool isObjectHighlighted_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool IsObjectHighlighted {
+      get { return isObjectHighlighted_; }
+      set {
+        isObjectHighlighted_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as StatusMessage);
@@ -166,6 +191,8 @@ namespace UnityAPI.Pub {
       if (State != other.State) return false;
       if (Timestamp != other.Timestamp) return false;
       if (ScenarioPath != other.ScenarioPath) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RainIntensity, other.RainIntensity)) return false;
+      if (IsObjectHighlighted != other.IsObjectHighlighted) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -177,6 +204,8 @@ namespace UnityAPI.Pub {
       if (State != 0) hash ^= State.GetHashCode();
       if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
       if (ScenarioPath.Length != 0) hash ^= ScenarioPath.GetHashCode();
+      if (RainIntensity != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RainIntensity);
+      if (IsObjectHighlighted != false) hash ^= IsObjectHighlighted.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -204,6 +233,14 @@ namespace UnityAPI.Pub {
         output.WriteRawTag(42);
         output.WriteString(ScenarioPath);
       }
+      if (RainIntensity != 0F) {
+        output.WriteRawTag(53);
+        output.WriteFloat(RainIntensity);
+      }
+      if (IsObjectHighlighted != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsObjectHighlighted);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -222,6 +259,12 @@ namespace UnityAPI.Pub {
       }
       if (ScenarioPath.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(ScenarioPath);
+      }
+      if (RainIntensity != 0F) {
+        size += 1 + 4;
+      }
+      if (IsObjectHighlighted != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -244,6 +287,12 @@ namespace UnityAPI.Pub {
       }
       if (other.ScenarioPath.Length != 0) {
         ScenarioPath = other.ScenarioPath;
+      }
+      if (other.RainIntensity != 0F) {
+        RainIntensity = other.RainIntensity;
+      }
+      if (other.IsObjectHighlighted != false) {
+        IsObjectHighlighted = other.IsObjectHighlighted;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -274,6 +323,14 @@ namespace UnityAPI.Pub {
           }
           case 42: {
             ScenarioPath = input.ReadString();
+            break;
+          }
+          case 53: {
+            RainIntensity = input.ReadFloat();
+            break;
+          }
+          case 56: {
+            IsObjectHighlighted = input.ReadBool();
             break;
           }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Controls;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
@@ -55,12 +56,23 @@ namespace UnityUIWrapper.Model
             }
         }
 
+
+
         private void onRouteSelector()
+        {
+            ContextMenu contextMenu = new ContextMenu();
+            MenuItem item = new MenuItem();
+            item.Header = "Attach To Route";
+            item.Command = new RelayCommand(showRoutesMenu);
+            contextMenu.Items.Add(item);
+            contextMenu.IsOpen = true;
+        }
+
+        private void showRoutesMenu()
         {
             m_state.SelectedEntity = Entity;
             RouteSelectorView view = new RouteSelectorView();
             view.Show();
-            
         }
 
         private void onEntityClick()

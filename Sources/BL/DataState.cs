@@ -135,11 +135,10 @@ namespace UnityUIWrapper.BL
             ElapsedTime = p_msg.Timestamp;
             ScenarioPath = p_msg.ScenarioPath;
 
-            if (m_routes.Count != p_msg.Routes.Count)
-            {
-                m_routes = p_msg.Routes.ToList();
-                m_propertyUpdatedEvent.OnNext(new Unit());
-            }
+
+            m_routes = p_msg.Routes.ToList();
+            m_propertyUpdatedEvent.OnNext(new Unit());
+
 
 
             foreach (var ent in p_msg.Entities)
@@ -178,7 +177,7 @@ namespace UnityUIWrapper.BL
         {
             get
             {
-                lock(s_locker)
+                lock (s_locker)
                 {
                     if (s_state == null)
                     {
