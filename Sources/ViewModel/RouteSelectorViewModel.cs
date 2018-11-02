@@ -38,7 +38,11 @@ namespace UnityUIWrapper.ViewModel
             }
             set
             {
+                if (m_selectedRoute == value)
+                    return;
+
                 m_selectedRoute = value;
+                onSelectedRouteChanged();
                 RaisePropertyChanged(() => SelectedRoute);
                 RaisePropertyChanged(() => IsSelectEnabled);
             }

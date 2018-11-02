@@ -162,7 +162,7 @@ namespace UnityUIWrapper.BL
             UnityGlobalCommand command = new UnityGlobalCommand();
             command.OpCode = CommandOpCode.ObjectManagement;
             command.ObjectManagement = new ObjectManagement();
-            command.ObjectManagement.OpCode = ObjectControlOpCode.HighlightObjects;
+            command.ObjectManagement.OpCode = ObjectControlOpCode.SelectRoute;
             command.ObjectManagement.RouteId = p_route.Id;
 
             m_commHandler.Send(command.ToByteArray());

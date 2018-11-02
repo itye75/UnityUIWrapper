@@ -22,12 +22,10 @@ namespace UnityUIWrapper.View
     /// </summary>
     public partial class RouteSelectorView : MetroWindow
     {
-
         public RouteSelectorView()
         {
             InitializeComponent();
         }
-
    
     }
 }
